@@ -24,3 +24,9 @@ Az eotvosutca20.hu egyoldalas weboldala. Öt exkluzív lakás, 1067 Budapest, E�
 ## Képcsere
 
 Az `images` mappában töltsd fel az új képet **ugyanazzal a fájlnévvel** (Add file → Upload files). Így az oldalon semmit nem kell átírni.
+
+## Görgetéses fejléc (a ház felépül)
+
+- A fejlécben a ház görgetésre „felépül”: előbb lebomlik a régi tető, majd ráépül az új emelet.
+- A képkockák az `images/epites` mappában vannak: `a_001–a_064.webp` (tetőbontás), `b_001–b_064.webp` (ráépítés).
+- A görgetés hosszát az `index.html`-ben a `.hero{...height:250vh}` érték adja: kisebb szám = gyorsabban felépül.

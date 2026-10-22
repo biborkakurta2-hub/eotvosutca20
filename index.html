@@ -57,7 +57,9 @@ section{padding:110px 0}
 /* ---------- navigáció ---------- */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,box-shadow .35s;padding:0}
 nav .bar{width:min(1240px,94%);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:76px}
-nav.scrolled{background:rgba(244,239,230,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(169,132,62,.25)}
+/* a háttér pszeudo-elemen van: a nav-on lévő backdrop-filter a fixed mobilmenüt a nav-hoz kötné */
+nav::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .35s;background:rgba(244,239,230,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(169,132,62,.25)}
+nav.scrolled::before{opacity:1}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .brand .name{font-family:var(--serif);font-size:22px;letter-spacing:.34em;font-weight:600;color:#fff;transition:color .35s;padding-left:.34em}
 nav.scrolled .brand .name{color:var(--ink)}
@@ -81,11 +83,48 @@ nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .navlinks a{color:var(--ink)!important;font-size:15px}
 }
 
-/* ---------- hero ---------- */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:0;color:#fff;isolation:isolate}
-.hero-bg{position:absolute;inset:0;z-index:-2;background:url("images/hero.webp") center/cover no-repeat #1d1a15}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(20,17,12,.88) 0%,rgba(20,17,12,.45) 45%,rgba(20,17,12,.35) 100%)}
-.hero .wrap{padding:0 0 90px}
+/* ---------- hero: görgetésre épülő ház ---------- */
+.hero{position:relative;height:250vh;padding:0;color:#fff;background:var(--dark)}
+.build-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;align-items:flex-end;isolation:isolate}
+.build-canvas{position:absolute;inset:0;z-index:-2;width:100%;height:100%;display:block;background:#1d1a15 url("images/epites/a_001.webp") 53% 50%/cover no-repeat}
+.build-shade{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(to right,rgba(20,17,12,.45) 0%,rgba(20,17,12,0) 55%),linear-gradient(to top,rgba(20,17,12,.82) 0%,rgba(20,17,12,.30) 42%,rgba(20,17,12,.10) 70%,rgba(20,17,12,.35) 100%);transition:opacity .4s}
+.hero .wrap{padding:0 0 90px;transition:opacity .25s linear,transform .25s linear;will-change:opacity,transform}
+.build-steps,.build-bar{position:absolute;left:0;right:0;width:min(1160px,92%);margin:0 auto}
+.build-steps{bottom:84px;pointer-events:none}
+.build-step{position:absolute;left:0;bottom:0;max-width:520px;opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+.build-step.on{opacity:1;transform:none}
+.build-step .no{display:block;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-line);font-weight:500;margin-bottom:12px}
+.build-step h2{margin:0 0 10px;font-size:clamp(30px,4.4vw,52px)}
+.build-step p{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.2vw,23px);color:rgba(255,255,255,.88)}
+.build-bar{bottom:40px;display:flex;align-items:center;gap:18px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6);pointer-events:none}
+.build-bar .track{flex:1;height:1px;background:rgba(255,255,255,.22);position:relative;overflow:hidden}
+.build-bar .fill{position:absolute;inset:0;background:var(--gold-line);transform-origin:left;transform:scaleX(0)}
+.build-dots{position:absolute;right:max(4vw,calc((100vw - 1160px)/2));top:50%;transform:translateY(-50%);list-style:none;display:flex;flex-direction:column;gap:22px;opacity:0;transition:opacity .5s}
+.build-dots.show{opacity:1}
+.build-dots li{display:flex;align-items:center;justify-content:flex-end;gap:14px;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.75);text-shadow:0 1px 10px rgba(0,0,0,.55);transition:color .4s}
+.build-dots li::after{content:"";width:22px;height:1px;background:currentColor;transition:width .4s}
+.build-dots li.on{color:#F0D79C}
+.build-dots li.on::after{width:46px}
+.build-dots b{font-family:var(--serif);font-size:20px;font-weight:500;letter-spacing:.06em}
+@media(max-width:720px){
+  .hero .wrap{padding-bottom:96px}
+  .hero h1{font-size:clamp(44px,13vw,64px)}
+  .hero .ctas{margin-top:28px}
+  .build-steps{bottom:84px}
+  .build-bar{bottom:40px}
+  .build-bar span:first-child{display:none}
+  .build-dots{display:none}
+}
+@media(max-aspect-ratio:1/1){
+  .build-canvas{background-size:auto 72%;background-position:53% 0}
+  .build-shade{background:linear-gradient(to top,rgba(29,26,21,1) 0%,rgba(29,26,21,.96) 34%,rgba(29,26,21,0) 58%,rgba(20,17,12,0) 85%,rgba(20,17,12,.35) 100%)}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero{height:auto}
+  .build-stage{position:relative;min-height:100svh}
+  .build-canvas{background-image:url("images/epites/b_064.webp")}
+  .build-steps,.build-bar,.build-dots{display:none}
+}
 .hero .addr{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-line);font-weight:500;margin-bottom:26px}
 .hero h1{font-size:clamp(52px,9vw,110px);letter-spacing:.22em;font-weight:500;text-indent:.22em;text-align:left}
 .hero .sub{font-size:12.5px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold-line);margin:8px 0 30px;font-weight:400}
@@ -308,8 +347,10 @@ footer li{list-style:none;margin-bottom:8px}
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="hero">
-  <div class="hero-bg" role="img" aria-label="A nappali látványterve – beépített vitrines tárolók, elegáns anyaghasználat"></div>
-  <div class="wrap">
+  <div class="build-stage">
+  <canvas class="build-canvas" id="buildCanvas" role="img" aria-label="Látványterv drónnézetből: a ház régi tetejét lebontják, és új emelet épül rá öt új lakással"></canvas>
+  <div class="build-shade" id="buildShade"></div>
+  <div class="wrap" id="heroCopy">
     <svg class="mark" width="56" height="50" viewBox="0 0 34 30" fill="none" aria-hidden="true">
       <path d="M17 2 C14 8 13 13 17 19 C21 13 20 8 17 2 Z" fill="#C6A868"/>
       <path d="M8 7 C8 13 11 17 16.2 19.4 C15.5 13.5 13 9.5 8 7 Z" fill="#A9843E"/>
@@ -324,6 +365,32 @@ footer li{list-style:none;margin-bottom:8px}
       <a href="#ajanlat" class="btn btn-solid">Ajánlatot kérek</a>
       <a href="#lakasok" class="btn btn-ghost">Lakások megtekintése</a>
     </div>
+  </div>
+  <ol class="build-dots" id="buildDots" aria-hidden="true">
+    <li><b>01</b> Ma</li>
+    <li><b>02</b> Ráépítés</li>
+    <li><b>03</b> Kész</li>
+  </ol>
+  <div class="build-steps" aria-live="polite">
+    <div class="build-step" data-from=".08" data-to=".48">
+      <span class="no">01 · Ma</span>
+      <h2>A klasszikus bérház</h2>
+      <p>1877 óta áll Terézváros szívében. A régi tető helyére új élet költözik.</p>
+    </div>
+    <div class="build-step" data-from=".48" data-to=".86">
+      <span class="no">02 · Ráépítés</span>
+      <h2>Egy új emelet</h2>
+      <p>A meglévő falakra épül, a ház karakterét megőrizve.</p>
+    </div>
+    <div class="build-step" data-from=".86" data-to="1.01">
+      <span class="no">03 · Kész</span>
+      <h2>Öt új otthon</h2>
+      <p>Összesen 295,80 m² új lakótér, a belső udvar fájára nézve.</p>
+    </div>
+  </div>
+  <div class="build-bar" aria-hidden="true">
+    <span>Görgessen</span><span class="track"><span class="fill" id="buildFill"></span></span><span>Látványterv, tájékoztató jellegű</span>
+  </div>
   </div>
 </header>
 
@@ -755,6 +822,120 @@ if(reduce){rev.forEach(function(el){el.classList.add('in');});}
 else{
   var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.12});
   rev.forEach(function(el){ro.observe(el);});
+}
+
+/* --- hero: görgetésre épülő ház (képkocka-szekvencia canvasra rajzolva) ---
+   A szakaszok a hero görgetési hosszának arányában (0–1) futnak.
+   'seq' = képkockasor (a_ = a régi tető bontása, b_ = az új emelet felépülése),
+   'fade' = átúszás egy állóképbe. */
+var BUILD=[
+  {type:'seq',src:function(i){return 'images/epites/a_'+('00'+(i+1)).slice(-3)+'.webp';},count:64,from:.06,to:.46},
+  {type:'seq',src:function(i){return 'images/epites/b_'+('00'+(i+1)).slice(-3)+'.webp';},count:64,from:.50,to:.92}
+];
+var hero=document.getElementById('hero');
+var canvas=document.getElementById('buildCanvas');
+if(!reduce&&canvas.getContext){
+  var ctx=canvas.getContext('2d');
+  var heroCopy=document.getElementById('heroCopy');
+  var fill=document.getElementById('buildFill');
+  var steps=Array.prototype.slice.call(document.querySelectorAll('.build-step'));
+  var dotList=document.getElementById('buildDots'),dots=dotList.querySelectorAll('li');
+  var FOCUS_X=.53,FOCUS_Y=.5;
+  var cw=0,ch=0,lastKey='';
+
+  BUILD.forEach(function(s){
+    if(s.type==='seq'){s.imgs=[];for(var i=0;i<s.count;i++)s.imgs.push(null);}
+  });
+  function load(src,cb){var im=new Image();im.decoding='async';im.onload=function(){cb(im);};im.src=src;return im;}
+
+  /* betöltési sorrend: minden szakasz első és utolsó kockája, majd a többi sorban */
+  var queue=[];
+  BUILD.forEach(function(s,si){
+    if(s.type==='seq'){queue.push([si,0],[si,s.count-1]);for(var i=1;i<s.count-1;i++)queue.push([si,i]);}
+    else queue.push([si,-1]);
+  });
+  var active=0;
+  function pump(){
+    while(active<6&&queue.length){
+      var q=queue.shift(),s=BUILD[q[0]];active++;
+      (function(s,idx){
+        load(idx<0?s.src:s.src(idx),function(im){
+          if(idx<0)s.img=im;else s.imgs[idx]=im;
+          active--;lastKey='';render();pump();
+        });
+      })(s,q[1]);
+    }
+  }
+  pump();
+
+  function nearest(s,i){
+    for(var d=0;d<s.count;d++){
+      if(s.imgs[i-d])return s.imgs[i-d];
+      if(s.imgs[i+d])return s.imgs[i+d];
+    }
+    return null;
+  }
+  /* álló (telefonos) képernyőn a kép a felső 72%-ot tölti ki, alatta marad hely a szövegnek */
+  function drawCover(im,alpha){
+    if(!im)return;
+    var bh=cw<ch?ch*.72:ch;
+    var r=Math.max(cw/im.naturalWidth,bh/im.naturalHeight);
+    var w=im.naturalWidth*r,h=im.naturalHeight*r;
+    ctx.globalAlpha=alpha;
+    ctx.drawImage(im,(cw-w)*FOCUS_X,(bh-h)*FOCUS_Y,w,h);
+    ctx.globalAlpha=1;
+  }
+  function resize(){
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    cw=canvas.clientWidth;ch=canvas.clientHeight;
+    canvas.width=Math.round(cw*dpr);canvas.height=Math.round(ch*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.imageSmoothingQuality='high';
+    lastKey='';render();
+  }
+  function progress(){
+    var total=hero.offsetHeight-window.innerHeight;
+    return total>0?Math.min(1,Math.max(0,-hero.getBoundingClientRect().top/total)):0;
+  }
+  function render(){
+    var p=progress();
+    /* melyik kép(ek) látszanak */
+    var base=null,over=null,alpha=0,key='';
+    for(var k=0;k<BUILD.length;k++){
+      var s=BUILD[k];
+      if(s.type==='seq'){
+        var t=Math.min(1,Math.max(0,(p-s.from)/(s.to-s.from)));
+        if(p>=s.from||k===0){var i=Math.round(t*(s.count-1));base=nearest(s,i);key='s'+k+'-'+i;}
+      }else if(p>=s.from){
+        alpha=Math.min(1,(p-s.from)/(s.to-s.from));over=s.img;key+='f'+k+'-'+alpha.toFixed(3);
+      }
+    }
+    if(key!==lastKey&&cw){
+      lastKey=key;
+      ctx.clearRect(0,0,cw,ch);
+      drawCover(base,1);
+      if(over&&alpha>0)drawCover(over,alpha);
+      if(base)canvas.style.backgroundImage='none';
+    }
+    /* szöveg: a címblokk kiúszik, a lépések feliratai váltják egymást */
+    var fade=Math.min(1,Math.max(0,(p-.01)/.07));
+    heroCopy.style.opacity=1-fade;
+    heroCopy.style.transform='translateY('+(-30*fade)+'px)';
+    heroCopy.style.visibility=fade>=1?'hidden':'visible';
+    steps.forEach(function(st,i){
+      var on=p>=+st.getAttribute('data-from')&&p<+st.getAttribute('data-to');
+      st.classList.toggle('on',on);
+      dots[i].classList.toggle('on',on);
+    });
+    dotList.classList.toggle('show',fade>=1);
+    fill.style.transform='scaleX('+p+')';
+  }
+  var ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;render();});}
+  },{passive:true});
+  window.addEventListener('resize',resize);
+  resize();
 }
 
 /* --- Érdekel gombok: űrlapra görgetés + lakás előválasztása --- */
