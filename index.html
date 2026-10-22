@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eötvös utca 20. · Öt exkluzív lakás Terézváros szívében</title>
+<meta name="description" content="Öt exkluzív, új építésű lakás Budapest VI. kerületében, a világörökségi Terézváros szívében, percekre az Andrássy úttól és az Oktogontól. Jogerős építési engedély (2025).">
+<meta property="og:title" content="Eötvös utca 20. · VI. kerület">
+<meta property="og:description" content="Öt exkluzív lakás Terézváros szívében – klasszikus bérház, új tetőtéri otthonok. Kérjen ajánlatot!">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="hu_HU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4EFE6;
+  --paper-2:#ECE4D4;
+  --ink:#262219;
+  --ink-soft:#6A6253;
+  --gold:#A9843E;
+  --gold-line:#C6A868;
+  --dark:#1D1A15;
+  --dark-2:#262119;
+  --ok:#4F7C54;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost','Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+  *{animation:none!important;transition:none!important}
+}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--gold);color:#fff}
+
+/* ---------- tipográfiai rendszer ---------- */
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold-line);flex:none}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12}
+h2{font-size:clamp(34px,4.6vw,56px);margin:18px 0 26px;letter-spacing:.01em}
+.lead{max-width:620px;color:var(--ink-soft);font-size:18px}
+.caption{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:16px}
+.figlabel{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-top:14px}
+.figlabel::before{content:"";width:26px;height:1px;background:var(--gold-line);flex:none}
+
+section{padding:110px 0}
+.wrap{width:min(1160px,92%);margin:0 auto}
+
+/* ---------- lótusz motívum ---------- */
+.lotus{display:inline-block}
+
+/* ---------- navigáció ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,box-shadow .35s;padding:0}
+nav .bar{width:min(1240px,94%);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:76px}
+nav.scrolled{background:rgba(244,239,230,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(169,132,62,.25)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .name{font-family:var(--serif);font-size:22px;letter-spacing:.34em;font-weight:600;color:#fff;transition:color .35s;padding-left:.34em}
+nav.scrolled .brand .name{color:var(--ink)}
+.brand svg path,.brand svg circle{transition:stroke .35s,fill .35s}
+.navlinks{display:flex;align-items:center;gap:30px;list-style:none}
+.navlinks a{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.85);font-weight:400;padding:6px 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+nav.scrolled .navlinks a{color:var(--ink-soft)}
+.navlinks a:hover,.navlinks a.active{color:var(--gold);border-color:var(--gold)}
+.nav-cta{background:var(--gold);color:#fff!important;border:none!important;padding:11px 22px!important;letter-spacing:.14em;transition:background .25s}
+.nav-cta:hover{background:#8f6e31}
+.burger{display:none;background:none;border:none;cursor:pointer;width:40px;height:40px;position:relative;z-index:120}
+.burger span{display:block;width:24px;height:2px;background:#fff;margin:5px auto;transition:.3s}
+nav.scrolled .burger span,nav.open .burger span{background:var(--ink)}
+nav.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+nav.open .burger span:nth-child(2){opacity:0}
+nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:960px){
+  .burger{display:block}
+  .navlinks{position:fixed;inset:0;background:var(--paper);flex-direction:column;justify-content:center;gap:26px;transform:translateY(-102%);transition:transform .4s ease;z-index:110}
+  nav.open .navlinks{transform:translateY(0)}
+  .navlinks a{color:var(--ink)!important;font-size:15px}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:0;color:#fff;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:url("images/hero.webp") center/cover no-repeat #1d1a15}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(20,17,12,.88) 0%,rgba(20,17,12,.45) 45%,rgba(20,17,12,.35) 100%)}
+.hero .wrap{padding:0 0 90px}
+.hero .addr{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-line);font-weight:500;margin-bottom:26px}
+.hero h1{font-size:clamp(52px,9vw,110px);letter-spacing:.22em;font-weight:500;text-indent:.22em;text-align:left}
+.hero .sub{font-size:12.5px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold-line);margin:8px 0 30px;font-weight:400}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.6vw,28px);max-width:560px;color:rgba(255,255,255,.92);font-weight:400}
+.hero .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:44px}
+.btn{display:inline-block;text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;padding:16px 34px;transition:.25s;cursor:pointer;border:1px solid var(--gold);font-family:var(--sans)}
+.btn-solid{background:var(--gold);color:#fff}
+.btn-solid:hover{background:#8f6e31;border-color:#8f6e31}
+.btn-ghost{background:transparent;color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.hero .mark{margin-bottom:22px}
+
+/* ---------- számsáv ---------- */
+.stats{background:var(--paper);padding:0}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);padding:44px 0;gap:20px}
+.stat{text-align:center}
+.stat b{display:block;font-family:var(--serif);font-weight:500;font-size:44px;color:var(--gold);line-height:1}
+.stat span{display:block;margin-top:10px;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft)}
+@media(max-width:720px){.stats .wrap{grid-template-columns:1fr;gap:34px}}
+
+/* ---------- projekt röviden ---------- */
+.intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:start}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:0;border-left:1px solid var(--gold-line);border-top:1px solid var(--gold-line)}
+.pillar{padding:30px 28px;border-right:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line)}
+.pillar svg{margin-bottom:16px}
+.pillar h3{font-size:22px;margin-bottom:8px}
+.pillar p{font-size:15px;color:var(--ink-soft)}
+@media(max-width:900px){.intro-grid{grid-template-columns:1fr;gap:44px}}
+@media(max-width:560px){.pillars{grid-template-columns:1fr}}
+
+/* ---------- lakások ---------- */
+#lakasok{background:var(--paper-2)}
+.flat-table{width:100%;border-collapse:collapse;margin-top:10px}
+.flat-table thead th{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;text-align:left;padding:0 14px 14px;border-bottom:1px solid var(--ink)}
+.flat-table tbody td{padding:24px 14px;border-bottom:1px solid var(--gold-line);vertical-align:middle}
+.flat-table .fname{font-family:var(--serif);font-size:26px;font-weight:500;white-space:nowrap}
+.flat-table .lvl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-top:4px;font-weight:500}
+.flat-table .area{font-family:var(--serif);font-size:24px;white-space:nowrap}
+.flat-table .meta{color:var(--ink-soft);font-size:15.5px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;flex:none}
+.status.ok{color:var(--ok)}.status.ok::before{background:var(--ok)}
+.status.res{color:#B07A2A}.status.res::before{background:#B07A2A}
+.status.sold{color:#9A3B3B}.status.sold::before{background:#9A3B3B}
+.price{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:16px}
+.btn-row{background:transparent;border:1px solid var(--gold);color:var(--gold);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;padding:11px 20px;cursor:pointer;transition:.25s;font-family:var(--sans);white-space:nowrap}
+.btn-row:hover{background:var(--gold);color:#fff}
+tr.flat-row{transition:background .25s}
+tr.flat-row:hover{background:rgba(198,168,104,.12)}
+.tnote{margin-top:22px;font-size:14px}
+@media(max-width:860px){
+  .flat-table thead{display:none}
+  .flat-table,.flat-table tbody,.flat-table tr,.flat-table td{display:block;width:100%}
+  tr.flat-row{border:1px solid var(--gold-line);background:var(--paper);margin-bottom:18px;padding:22px}
+  .flat-table tbody td{border:none;padding:6px 0}
+  .flat-table td[data-l]::before{content:attr(data-l);display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:2px}
+  .flat-table td.cell-btn{padding-top:16px}
+  .btn-row{width:100%;padding:14px}
+}
+
+/* ---------- alaprajz ---------- */
+.plan-grid{display:grid;grid-template-columns:.8fr 1.6fr;gap:60px;align-items:center}
+.plan-grid figure{background:#fff;padding:26px;box-shadow:0 20px 50px rgba(38,34,25,.10)}
+@media(max-width:900px){.plan-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ---------- galéria ---------- */
+#galeria{background:var(--dark);color:#EFE9DC}
+#galeria .eyebrow{color:var(--gold-line)}
+#galeria .lead{color:rgba(239,233,220,.72)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.gal figure{position:relative;overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;background:#111}
+.gal figure.wide{grid-column:span 2;aspect-ratio:auto}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,opacity .4s}
+.gal figure:hover img{transform:scale(1.045)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:36px 18px 14px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#fff;background:linear-gradient(to top,rgba(15,13,10,.75),transparent)}
+@media(max-width:820px){.gal{grid-template-columns:1fr 1fr}.gal figure.wide{grid-column:span 2}}
+@media(max-width:540px){.gal{grid-template-columns:1fr}.gal figure.wide{grid-column:span 1}}
+.gal-note{margin-top:26px;font-family:var(--serif);font-style:italic;color:rgba(239,233,220,.6);font-size:15px}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(15,13,10,.94);z-index:200;display:none;align-items:center;justify-content:center;flex-direction:column;padding:4vh 4vw}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:82vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb .lb-cap{color:var(--gold-line);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-top:18px}
+.lb button{position:absolute;background:none;border:1px solid rgba(255,255,255,.35);color:#fff;width:52px;height:52px;font-size:22px;cursor:pointer;transition:.25s;font-family:var(--sans)}
+.lb button:hover{background:rgba(255,255,255,.14)}
+.lb .lb-close{top:24px;right:24px}
+.lb .lb-prev{left:18px;top:50%;transform:translateY(-50%)}
+.lb .lb-next{right:18px;top:50%;transform:translateY(-50%)}
+
+/* ---------- műszaki ---------- */
+.spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--gold-line);margin-top:14px}
+.spec{display:grid;grid-template-columns:190px 1fr;gap:20px;padding:22px 6px;border-bottom:1px solid var(--gold-line)}
+.spec dt{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500;padding-top:4px}
+.spec dd{color:var(--ink-soft);font-size:16px}
+.spec-grid .spec:nth-child(odd){margin-right:34px}
+.spec-grid .spec:nth-child(even){margin-left:34px}
+@media(max-width:860px){.spec-grid{grid-template-columns:1fr}.spec-grid .spec{margin:0!important}.spec{grid-template-columns:1fr;gap:6px;padding:20px 0}}
+
+/* ---------- lokáció ---------- */
+#lokacio{background:var(--paper-2)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.dist{list-style:none;margin-top:30px}
+.dist li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 0;border-bottom:1px solid var(--gold-line);font-size:16px}
+.dist li span:last-child{font-family:var(--serif);font-style:italic;color:var(--gold);white-space:nowrap}
+.map-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#E7DEC9,#D9CDB2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.map-ph svg{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.map-ph .pin{position:relative;text-align:center;z-index:1}
+.map-ph .pin b{display:block;font-family:var(--serif);font-weight:500;font-size:20px;color:var(--ink)}
+.map-ph .pin span{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft)}
+@media(max-width:900px){.loc-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ---------- ütemezés ---------- */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
+.timeline::before{content:"";position:absolute;top:9px;left:0;right:0;height:1px;background:var(--gold-line)}
+.tl{position:relative;padding:38px 26px 0 0}
+.tl::before{content:"";position:absolute;top:3px;left:0;width:13px;height:13px;border-radius:50%;border:1px solid var(--gold);background:var(--paper)}
+.tl.done::before{background:var(--gold)}
+.tl.now::before{background:var(--gold);box-shadow:0 0 0 6px rgba(169,132,62,.22)}
+.tl h3{font-size:22px;margin-bottom:6px}
+.tl .when{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500;display:block;margin-bottom:10px}
+.tl p{font-size:14.5px;color:var(--ink-soft)}
+.tl.now h3::after{content:"aktuális fázis";display:inline-block;margin-left:10px;font-family:var(--sans);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--gold);padding:4px 9px;vertical-align:middle}
+@media(max-width:860px){
+  .timeline{grid-template-columns:1fr;gap:8px}
+  .timeline::before{top:0;bottom:0;left:6px;right:auto;width:1px;height:auto}
+  .tl{padding:0 0 34px 34px}
+}
+
+/* ---------- fejlesztő ---------- */
+#fejleszto .dev-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.dev-quote{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,30px);line-height:1.4;color:var(--ink);border-left:2px solid var(--gold);padding-left:28px}
+@media(max-width:860px){#fejleszto .dev-grid{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- GYIK ---------- */
+#gyik{background:var(--paper-2)}
+.acc{border-top:1px solid var(--gold-line);margin-top:14px}
+.acc-item{border-bottom:1px solid var(--gold-line)}
+.acc-btn{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 4px;cursor:pointer;text-align:left;font-family:var(--serif);font-size:21px;font-weight:500;color:var(--ink);transition:color .25s}
+.acc-btn:hover{color:var(--gold)}
+.acc-btn .ic{flex:none;width:30px;height:30px;border:1px solid var(--gold-line);display:grid;place-items:center;color:var(--gold);font-size:18px;transition:transform .3s,background .3s;font-family:var(--sans);font-weight:300}
+.acc-btn[aria-expanded="true"] .ic{transform:rotate(45deg);background:var(--gold);color:#fff}
+.acc-panel{overflow:hidden;max-height:0;transition:max-height .4s ease}
+.acc-panel .inner{padding:0 44px 26px 4px;color:var(--ink-soft);font-size:16px;max-width:760px}
+
+/* ---------- űrlap ---------- */
+#ajanlat{background:var(--dark);color:#EFE9DC;position:relative;overflow:hidden}
+#ajanlat .deco{position:absolute;right:-120px;top:50%;transform:translateY(-50%);opacity:.06;pointer-events:none}
+#ajanlat .eyebrow{color:var(--gold-line)}
+.form-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start;position:relative;z-index:1}
+.form-side p{color:rgba(239,233,220,.75);max-width:420px}
+.form-side .contactline{margin-top:34px;font-size:15px;color:rgba(239,233,220,.85)}
+.form-side .contactline b{display:block;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-line);font-weight:500;margin-bottom:4px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-line);font-weight:500}
+.field input,.field select,.field textarea{background:rgba(255,255,255,.05);border:1px solid rgba(198,168,104,.4);color:#EFE9DC;padding:15px 16px;font-family:var(--sans);font-size:16px;font-weight:300;transition:border-color .25s,background .25s;border-radius:0;appearance:none;-webkit-appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23C6A868' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.field select option{color:var(--ink);background:var(--paper)}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.09)}
+.field input::placeholder,.field textarea::placeholder{color:rgba(239,233,220,.35)}
+.field.err input,.field.err select,.field.err textarea{border-color:#C96A5B}
+.err-msg{display:none;font-size:13px;color:#E2988C}
+.field.err .err-msg{display:block}
+.gdpr{grid-column:1/-1;display:flex;gap:14px;align-items:flex-start;font-size:14px;color:rgba(239,233,220,.75)}
+.gdpr input{flex:none;width:20px;height:20px;margin-top:2px;accent-color:var(--gold);appearance:auto;-webkit-appearance:auto}
+.gdpr a{color:var(--gold-line)}
+.gdpr.err-c{outline:1px solid #C96A5B;outline-offset:8px}
+form .btn{grid-column:1/-1;justify-self:start;border:none;background:var(--gold);color:#fff}
+form .btn:hover{background:#c39b4e}
+.form-ok{display:none;grid-column:1/-1;border:1px solid var(--gold);padding:34px;text-align:center}
+.form-ok.show{display:block}
+.form-ok h3{font-size:26px;margin-bottom:8px;color:var(--gold-line)}
+.form-ok p{color:rgba(239,233,220,.8)}
+@media(max-width:920px){.form-grid{grid-template-columns:1fr;gap:44px}form{grid-template-columns:1fr}}
+
+/* ---------- lábléc ---------- */
+footer{background:#15120E;color:rgba(239,233,220,.6);padding:64px 0 40px;font-size:14.5px}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(198,168,104,.25)}
+footer h4{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-line);font-weight:500;margin-bottom:16px}
+footer a{color:rgba(239,233,220,.75);text-decoration:none}
+footer a:hover{color:var(--gold-line)}
+footer li{list-style:none;margin-bottom:8px}
+.foot-brand{font-family:var(--serif);letter-spacing:.3em;font-size:20px;color:#EFE9DC;margin:14px 0 10px;font-weight:600}
+.foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:28px;font-size:13px;color:rgba(239,233,220,.4)}
+@media(max-width:820px){footer .cols{grid-template-columns:1fr}}
+
+/* ---------- reveal animáció ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVIGÁCIÓ ============ -->
+<nav id="nav" aria-label="Fő navigáció">
+  <div class="bar">
+    <a class="brand" href="#hero" aria-label="Eötvös utca 20. – kezdőlap">
+      <svg class="logo-mark" width="34" height="30" viewBox="0 0 34 30" fill="none" aria-hidden="true">
+        <path d="M17 2 C14 8 13 13 17 19 C21 13 20 8 17 2 Z" fill="#C6A868"/>
+        <path d="M8 7 C8 13 11 17 16.2 19.4 C15.5 13.5 13 9.5 8 7 Z" fill="#A9843E"/>
+        <path d="M26 7 C26 13 23 17 17.8 19.4 C18.5 13.5 21 9.5 26 7 Z" fill="#A9843E"/>
+        <path d="M4 20 C8 26 26 26 30 20" stroke="#C6A868" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="name">EÖTVÖS</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Menü megnyitása" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="#projekt">A projekt</a></li>
+      <li><a href="#lakasok">Lakások</a></li>
+      <li><a href="#galeria">Galéria</a></li>
+      <li><a href="#muszaki">Műszaki tartalom</a></li>
+      <li><a href="#lokacio">Lokáció</a></li>
+      <li><a href="#gyik">GYIK</a></li>
+      <li><a href="#ajanlat" class="nav-cta">Ajánlatot kérek</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="hero">
+  <div class="hero-bg" role="img" aria-label="A nappali látványterve – beépített vitrines tárolók, elegáns anyaghasználat"></div>
+  <div class="wrap">
+    <svg class="mark" width="56" height="50" viewBox="0 0 34 30" fill="none" aria-hidden="true">
+      <path d="M17 2 C14 8 13 13 17 19 C21 13 20 8 17 2 Z" fill="#C6A868"/>
+      <path d="M8 7 C8 13 11 17 16.2 19.4 C15.5 13.5 13 9.5 8 7 Z" fill="#A9843E"/>
+      <path d="M26 7 C26 13 23 17 17.8 19.4 C18.5 13.5 21 9.5 26 7 Z" fill="#A9843E"/>
+      <path d="M4 20 C8 26 26 26 30 20" stroke="#C6A868" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    </svg>
+    <p class="addr">1067 Budapest · Eötvös utca 20.</p>
+    <h1>EÖTVÖS</h1>
+    <p class="sub">utca · VI. kerület</p>
+    <p class="tagline">Öt exkluzív lakás Terézváros szívében, a világörökség részeként.</p>
+    <div class="ctas">
+      <a href="#ajanlat" class="btn btn-solid">Ajánlatot kérek</a>
+      <a href="#lakasok" class="btn btn-ghost">Lakások megtekintése</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SZÁMOK ============ -->
+<div class="stats" aria-label="A projekt főbb adatai">
+  <div class="wrap reveal">
+    <div class="stat"><b>5</b><span>új lakás</span></div>
+    <div class="stat"><b>295,80 m²</b><span>hasznos lakóterület</span></div>
+    <div class="stat"><b>2025</b><span>jogerős építési engedély</span></div>
+  </div>
+</div>
+
+<!-- ============ A PROJEKT ============ -->
+<section id="projekt">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="reveal">
+        <p class="eyebrow">Bevezető</p>
+        <h2>Terézváros szívében,<br>a világörökség részeként</h2>
+        <p class="lead">Az Eötvös utca 20. Budapest VI. kerületének patinás, műemléki jelentőségű, világörökségi környezetében található, néhány percre az Andrássy úttól és az Oktogontól.</p>
+        <p class="lead" style="margin-top:18px">A klasszikus bérház csendes eleganciája és a nagyvárosi élet közelsége itt természetes egységet alkot. A ház tetőterének beépítésével és egy új emelet hozzáadásával öt exkluzív, igényesen kialakított otthon születik.</p>
+      </div>
+      <div class="pillars reveal">
+        <div class="pillar">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M17 3 L29 10 V31 H5 V10 Z" stroke="#A9843E" stroke-width="1.4"/><path d="M13 31 V20 H21 V31" stroke="#A9843E" stroke-width="1.4"/><path d="M11 14 H23" stroke="#C6A868" stroke-width="1.4"/></svg>
+          <h3>Világörökségi lokáció</h3>
+          <p>Patinás, műemléki jelentőségű környezet az Andrássy út és az Oktogon szomszédságában.</p>
+        </div>
+        <div class="pillar">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect x="5" y="5" width="24" height="24" stroke="#A9843E" stroke-width="1.4"/><path d="M11 18 L15.5 22.5 L23.5 12.5" stroke="#C6A868" stroke-width="1.6" fill="none"/></svg>
+          <h3>Jogerős engedély</h3>
+          <p>A projekt 2025-ben megszerzett, jogerős építési engedéllyel rendelkezik.</p>
+        </div>
+        <div class="pillar">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M6 29 V13 L17 5 L28 13 V29" stroke="#A9843E" stroke-width="1.4" fill="none"/><path d="M6 29 H28" stroke="#A9843E" stroke-width="1.4"/><circle cx="17" cy="18" r="3.4" stroke="#C6A868" stroke-width="1.4"/></svg>
+          <h3>Klasszikus keretek</h3>
+          <p>A századfordulós bérház értékeire épülő fejlesztés: tetőtér-beépítés és új emelet.</p>
+        </div>
+        <div class="pillar">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M17 4 C14 10 13 15 17 21 C21 15 20 10 17 4 Z" stroke="#A9843E" stroke-width="1.4"/><path d="M7 24 C11 29 23 29 27 24" stroke="#C6A868" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+          <h3>Prémium kialakítás</h3>
+          <p>Márványburkolatok, üvegfrontos beépített szekrények, meleg tónusú, elegáns anyaghasználat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LAKÁSOK ============ -->
+<section id="lakasok">
+  <div class="wrap">
+    <p class="eyebrow reveal">A lakások</p>
+    <h2 class="reveal">Öt otthon, két szinten</h2>
+    <p class="lead reveal">A második emeleten három, a tetőtéri szinten két lakás készül. Válassza ki az önhöz illő otthont, és kérjen személyre szabott ajánlatot.</p>
+
+    <table class="flat-table reveal" aria-label="Elérhető lakások listája">
+      <thead>
+        <tr>
+          <th scope="col">Lakás</th>
+          <th scope="col">Kialakítás</th>
+          <th scope="col">Alapterület</th>
+          <th scope="col">Státusz</th>
+          <th scope="col">Ár</th>
+          <th scope="col"><span style="position:absolute;clip:rect(0 0 0 0)">Érdeklődés</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="flat-row">
+          <td><span class="fname">1. lakás</span><span class="lvl">2. emelet</span></td>
+          <td class="meta" data-l="Kialakítás">egyszintes · 2 szoba</td>
+          <td class="area" data-l="Alapterület">65,71 m²</td>
+          <td data-l="Státusz"><span class="status ok">Elérhető</span></td>
+          <td class="price" data-l="Ár">Ár érdeklődésre</td>
+          <td class="cell-btn"><button class="btn-row" data-flat="1. lakás — 2. emelet, 65,71 m²">Érdekel</button></td>
+        </tr>
+        <tr class="flat-row">
+          <td><span class="fname">2. lakás</span><span class="lvl">2. emelet</span></td>
+          <td class="meta" data-l="Kialakítás">egyszintes · 2 szoba</td>
+          <td class="area" data-l="Alapterület">54,34 m²</td>
+          <td data-l="Státusz"><span class="status ok">Elérhető</span></td>
+          <td class="price" data-l="Ár">Ár érdeklődésre</td>
+          <td class="cell-btn"><button class="btn-row" data-flat="2. lakás — 2. emelet, 54,34 m²">Érdekel</button></td>
+        </tr>
+        <tr class="flat-row">
+          <td><span class="fname">3. lakás</span><span class="lvl">2. emelet</span></td>
+          <td class="meta" data-l="Kialakítás">kétszintes · 3 szoba</td>
+          <td class="area" data-l="Alapterület">71,62 m²</td>
+          <td data-l="Státusz"><span class="status ok">Elérhető</span></td>
+          <td class="price" data-l="Ár">Ár érdeklődésre</td>
+          <td class="cell-btn"><button class="btn-row" data-flat="3. lakás — 2. emelet, 71,62 m²">Érdekel</button></td>
+        </tr>
+        <tr class="flat-row">
+          <td><span class="fname">4. lakás</span><span class="lvl">Tetőtéri szint</span></td>
+          <td class="meta" data-l="Kialakítás">egyszintes · 2 szoba</td>
+          <td class="area" data-l="Alapterület">52,97 m²</td>
+          <td data-l="Státusz"><span class="status ok">Elérhető</span></td>
+          <td class="price" data-l="Ár">Ár érdeklődésre</td>
+          <td class="cell-btn"><button class="btn-row" data-flat="4. lakás — tetőtéri szint, 52,97 m²">Érdekel</button></td>
+        </tr>
+        <tr class="flat-row">
+          <td><span class="fname">5. lakás</span><span class="lvl">Tetőtéri szint</span></td>
+          <td class="meta" data-l="Kialakítás">egyszintes · 2 szoba</td>
+          <td class="area" data-l="Alapterület">51,16 m²</td>
+          <td data-l="Státusz"><span class="status ok">Elérhető</span></td>
+          <td class="price" data-l="Ár">Ár érdeklődésre</td>
+          <td class="cell-btn"><button class="btn-row" data-flat="5. lakás — tetőtéri szint, 51,16 m²">Érdekel</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="tnote caption">Összes hasznos lakóterület: 295,80 m². Az adatok tájékoztató jellegűek.</p>
+  </div>
+</section>
+
+<!-- ============ ALAPRAJZ ============ -->
+<section id="alaprajz">
+  <div class="wrap">
+    <div class="plan-grid">
+      <div class="reveal">
+        <p class="eyebrow">Alaprajz</p>
+        <h2>Az 5. lakás alaprajza</h2>
+        <p class="lead">51,16 m² a tetőtéri szinten: tágas nappali étkezővel és konyhával, hálószoba gardróbbal, két fürdőszoba. Látványterv, tájékoztató jellegű ábra.</p>
+        <p class="lead" style="margin-top:18px">A többi lakás alaprajzát kérésre örömmel megküldjük — <a href="#ajanlat" style="color:var(--gold)">kérjen ajánlatot</a>.</p>
+      </div>
+      <figure class="reveal">
+        <img src="images/alaprajz.webp" alt="Az 5. lakás felülnézeti alaprajza – 51,16 m², nappali, konyha, hálószoba, két fürdőszoba" loading="lazy">
+        <figcaption class="figlabel">Az 5. lakás — 51,16 m²</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALÉRIA ============ -->
+<section id="galeria">
+  <div class="wrap">
+    <p class="eyebrow reveal">Enteriőrök</p>
+    <h2 class="reveal">Látványtervek</h2>
+    <p class="lead reveal">Beépített vitrines tárolók, márványburkolatok és meleg tónusú, elegáns anyaghasználat — kattintson a képekre a nagyításhoz.</p>
+    <div class="gal reveal" id="gal">
+      <figure class="wide" data-cap="Nappali"><img src="images/hero.webp" alt="Nappali látványterve – világos kanapé, vitrines tárolófal, márvány dohányzóasztal" loading="lazy"><figcaption>Nappali</figcaption></figure>
+      <figure data-cap="Étkező"><img src="images/etkezo.webp" alt="Étkező látványterve – márvány asztal, hangulatvilágítású vitrines fal" loading="lazy"><figcaption>Étkező</figcaption></figure>
+      <figure data-cap="Konyha"><img src="images/konyha.webp" alt="Konyha látványterve – sötét frontok, kőmintás munkapult" loading="lazy"><figcaption>Konyha</figcaption></figure>
+      <figure data-cap="Konyha és nappali"><img src="images/konyha-nappali.webp" alt="Egybenyitott konyha és nappali látványterve" loading="lazy"><figcaption>Konyha és nappali</figcaption></figure>
+      <figure data-cap="Hálószoba"><img src="images/haloszoba.webp" alt="Hálószoba látványterve – pasztell tónusok, üvegfrontos beépített szekrények" loading="lazy"><figcaption>Hálószoba</figcaption></figure>
+      <figure data-cap="Gardrób"><img src="images/gardrob.webp" alt="Gardrób látványterve – üvegfrontos, világított beépített szekrény" loading="lazy"><figcaption>Gardrób</figcaption></figure>
+      <figure data-cap="Fürdőszoba"><img src="images/furdoszoba.webp" alt="Fürdőszoba látványterve – márványburkolat, fekete szerelvények" loading="lazy"><figcaption>Fürdőszoba</figcaption></figure>
+      <figure data-cap="Gardrób és fürdő kapcsolata"><img src="images/gardrob-furdo.webp" alt="A gardrób és a fürdőszoba kapcsolata – bordázott üvegajtó" loading="lazy"><figcaption>Gardrób és fürdő</figcaption></figure>
+      <figure data-cap="Előszoba"><img src="images/eloszoba.webp" alt="Előszoba látványterve – halszálka parketta, arany keretes tükrök" loading="lazy"><figcaption>Előszoba</figcaption></figure>
+    </div>
+    <p class="gal-note">A bemutatott enteriőr az öt elérhető lakás egyikének látványterve. A látványtervek illusztrációk.</p>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Kép nagyítva">
+  <button class="lb-close" id="lbClose" aria-label="Bezárás">✕</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Előző kép">‹</button>
+  <img id="lbImg" src="" alt="">
+  <p class="lb-cap" id="lbCap"></p>
+  <button class="lb-next" id="lbNext" aria-label="Következő kép">›</button>
+</div>
+
+<!-- ============ MŰSZAKI ============ -->
+<section id="muszaki">
+  <div class="wrap">
+    <p class="eyebrow reveal">Műszaki tartalom</p>
+    <h2 class="reveal">Beilleszthető igényes részletek</h2>
+    <dl class="spec-grid reveal">
+      <div class="spec"><dt>Fürdőszobák</dt><dd>Márványburkolat, fekete szerelvények; zuhanyzó természetes fénnyel.</dd></div>
+      <div class="spec"><dt>Konyha</dt><dd>Letisztult vonalak, sötét frontok, kőmintás munkapult.</dd></div>
+      <div class="spec"><dt>Tárolás</dt><dd>Üvegfrontos, világított beépített szekrények és gardrób.</dd></div>
+      <div class="spec"><dt>Burkolatok</dt><dd>Halszálka mintás parketta a lakóterekben, nagyméretű kőlapok a vizes helyiségekben.</dd></div>
+    </dl>
+    <p class="tnote caption reveal">Az enteriőrökben bemutatott megoldások vevői igény szerint beilleszthetők; a részletes műszaki tartalomról ajánlatkéréskor adunk tájékoztatást.</p>
+  </div>
+</section>
+
+<!-- ============ LOKÁCIÓ ============ -->
+<section id="lokacio">
+  <div class="wrap">
+    <div class="loc-grid">
+      <div class="reveal">
+        <p class="eyebrow">Lokáció</p>
+        <h2>A város legjava, sétatávolságra</h2>
+        <p class="lead">A VI. kerület világörökségi negyede kávéházakkal, színházakkal és fasorokkal öleli körül a házat — miközben az Eötvös utca megőrzi csendes, lakóutcai nyugalmát.</p>
+        <ul class="dist">
+          <li><span>Andrássy út</span><span>pár perc séta</span></li>
+          <li><span>Oktogon · M1 metró</span><span>néhány perc séta</span></li>
+          <li><span>Liszt Ferenc tér, kávéházak</span><span>rövid séta</span></li>
+          <li><span>Nyugati pályaudvar</span><span>kb. 15 perc séta</span></li>
+          <li><span>Városliget</span><span>pár megálló az M1-gyel</span></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <iframe src="https://www.google.com/maps?q=1067+Budapest,+E%C3%B6tv%C3%B6s+utca+20&z=15&output=embed"
+                width="100%" height="440" style="border:0;display:block" loading="lazy" allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade" title="Térkép – 1067 Budapest, Eötvös utca 20."></iframe>
+        <p class="figlabel">1067 Budapest, Eötvös utca 20.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÜTEMEZÉS ============ -->
+<section id="utemezes">
+  <div class="wrap">
+    <p class="eyebrow reveal">Ütemezés</p>
+    <h2 class="reveal">A tervektől az átadásig</h2>
+    <div class="timeline reveal">
+      <div class="tl done">
+        <span class="when">Lezárult</span>
+        <h3>Tervezés</h3>
+        <p>A meglévő épület értékeire épülő tetőtér-beépítés és emeletráépítés tervei elkészültek.</p>
+      </div>
+      <div class="tl now">
+        <span class="when">2025</span>
+        <h3>Jogerős engedély</h3>
+        <p>A projekt jogerős építési engedéllyel rendelkezik, a kivitelezés előkészítése zajlik.</p>
+      </div>
+      <div class="tl">
+        <span class="when">Következő fázis</span>
+        <h3>Kivitelezés</h3>
+        <p>Az építési munkálatok az ütemterv szerint, folyamatos minőség-ellenőrzés mellett zajlanak.</p>
+      </div>
+      <div class="tl">
+        <span class="when">Záró fázis</span>
+        <h3>Átadás</h3>
+        <p>Műszaki átadás-átvétel, majd kulcsátadás az új tulajdonosoknak.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEJLESZTŐ ============ -->
+<section id="fejleszto">
+  <div class="wrap">
+    <div class="dev-grid">
+      <div class="reveal">
+        <p class="eyebrow">A fejlesztő</p>
+        <h2>Értékőrző fejlesztés</h2>
+        <p class="lead">A fejlesztés a klasszikus budapesti épületállomány értékeire épít: kis léptékű, prémium minőségű otthonok, ahol a századfordulós ház karaktere és a mai igények találkoznak.</p>
+        <p class="lead" style="margin-top:18px">A projektet a tervezéstől az átadásig egy kézben tartjuk — a részletekről személyes egyeztetésen adunk teljes képet.</p>
+      </div>
+      <p class="dev-quote reveal">„A századfordulós ház méltóságát nem lecserélni akarjuk — hanem új tartalommal megtölteni."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GYIK ============ -->
+<section id="gyik">
+  <div class="wrap">
+    <p class="eyebrow reveal">Gyakori kérdések</p>
+    <h2 class="reveal">Amit a vásárlás előtt tudni érdemes</h2>
+    <div class="acc reveal">
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false" aria-controls="p1" id="q1">Hogyan zajlik a foglalás?<span class="ic">+</span></button>
+        <div class="acc-panel" id="p1" role="region" aria-labelledby="q1"><div class="inner">Érdeklődését az ajánlatkérő űrlapon vagy elérhetőségeinken jelezheti. Személyes egyeztetés után a kiválasztott lakás foglalási megállapodással és foglalóval biztosítható; ennek pontos feltételeiről kollégáink adnak tájékoztatást.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false" aria-controls="p2" id="q2">Milyen a fizetési ütemezés?<span class="ic">+</span></button>
+        <div class="acc-panel" id="p2" role="region" aria-labelledby="q2"><div class="inner">A vételár jellemzően a kivitelezés készültségi fokához igazodó részletekben fizetendő, az adásvételi szerződésben rögzített ütemterv szerint. A pontos konstrukcióról ajánlatkéréskor adunk részletes tájékoztatást.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false" aria-controls="p3" id="q3">Igénybe vehető hitel vagy állami támogatás?<span class="ic">+</span></button>
+        <div class="acc-panel" id="p3" role="region" aria-labelledby="q3"><div class="inner">Az új építésű lakások banki finanszírozással megvásárolhatók, és a mindenkori jogosultsági feltételek teljesülése esetén állami támogatások is igénybe vehetők. Javasoljuk, hogy a konkrét lehetőségekről egyeztessen hitelközvetítőjével vagy bankjával — kérésre partnereinkkel is összekötjük.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false" aria-controls="p4" id="q4">Milyen garancia vonatkozik a lakásokra?<span class="ic">+</span></button>
+        <div class="acc-panel" id="p4" role="region" aria-labelledby="q4"><div class="inner">Az új építésű lakásokra a jogszabályokban előírt kötelező jótállás és szavatosság vonatkozik. A garanciális ügyintézés menetéről az átadáskor részletes tájékoztatót adunk.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false" aria-controls="p5" id="q5">Hogyan történik a műszaki átadás?<span class="ic">+</span></button>
+        <div class="acc-panel" id="p5" role="region" aria-labelledby="q5"><div class="inner">Az elkészült lakást közös bejáráson, jegyzőkönyv felvétele mellett adjuk át. Az esetlegesen rögzített hibák javítása után kerül sor a birtokbaadásra és a kulcsátadásra.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false" aria-controls="p6" id="q6">Alakítható a lakások belső kialakítása?<span class="ic">+</span></button>
+        <div class="acc-panel" id="p6" role="region" aria-labelledby="q6"><div class="inner">A kivitelezés adott fázisáig — a műszaki lehetőségek keretein belül — van mód a burkolatok és egyes belső megoldások személyre szabására. A vevői módosítások menetéről egyeztessen kollégáinkkal.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AJÁNLATKÉRÉS ============ -->
+<section id="ajanlat">
+  <svg class="deco" width="520" height="460" viewBox="0 0 34 30" fill="none" aria-hidden="true">
+    <path d="M17 2 C14 8 13 13 17 19 C21 13 20 8 17 2 Z" fill="#C6A868"/>
+    <path d="M8 7 C8 13 11 17 16.2 19.4 C15.5 13.5 13 9.5 8 7 Z" fill="#C6A868"/>
+    <path d="M26 7 C26 13 23 17 17.8 19.4 C18.5 13.5 21 9.5 26 7 Z" fill="#C6A868"/>
+    <path d="M4 20 C8 26 26 26 30 20" stroke="#C6A868" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  </svg>
+  <div class="wrap">
+    <div class="form-grid">
+      <div class="form-side reveal">
+        <p class="eyebrow">Ajánlatkérés</p>
+        <h2 style="color:#EFE9DC">Kérjen személyre szabott ajánlatot</h2>
+        <p>Hagyja meg elérhetőségét, és kollégáink hamarosan felveszik önnel a kapcsolatot árakkal, alaprajzokkal és minden részlettel.</p>
+        <div class="contactline"><b>Cím</b>1067 Budapest, Eötvös utca 20.</div>
+        <div class="contactline"><b>E-mail</b><a href="mailto:info@eotvosutca20.hu">info@eotvosutca20.hu</a></div>
+        <div class="contactline"><b>Telefon</b><a href="tel:+36703621119">+36 70 362 1119</a></div>
+      </div>
+
+      <!-- ŰRLAP BEKÖTÉSI PONT:
+           Az oldal statikus, ezért a beküldéshez külső szolgáltatás szükséges.
+           1) Formspree (ajánlott): regisztráljon a formspree.io oldalon, majd az alábbi
+              action értékében cserélje a FORM_ID-t a kapott azonosítóra.
+           2) Netlify Forms: Netlify hosztolás esetén adja hozzá a form taghez a
+              data-netlify="true" attribútumot, és törölje az action-t.
+           3) Saját backend: állítsa az action-t a saját endpointjára (method="POST").
+           4) Egyszerű fallback: action="mailto:ertekesites@pelda.hu" method="post" enctype="text/plain" -->
+      <form id="leadForm" action="https://formspree.io/f/FORM_ID" method="POST" novalidate class="reveal">
+        <div class="field">
+          <label for="f-name">Teljes név *</label>
+          <input type="text" id="f-name" name="nev" placeholder="Példa Anna" autocomplete="name" required>
+          <span class="err-msg">Kérjük, adja meg a nevét.</span>
+        </div>
+        <div class="field">
+          <label for="f-email">E-mail cím *</label>
+          <input type="email" id="f-email" name="email" placeholder="anna@pelda.hu" autocomplete="email" required>
+          <span class="err-msg">Kérjük, érvényes e-mail címet adjon meg.</span>
+        </div>
+        <div class="field">
+          <label for="f-phone">Telefonszám</label>
+          <input type="tel" id="f-phone" name="telefon" placeholder="+36 30 123 4567" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="f-flat">Melyik lakás érdekli?</label>
+          <select id="f-flat" name="lakas">
+            <option value="Még nem tudom / általános érdeklődés" selected>Még nem tudom / általános érdeklődés</option>
+            <option value="1. lakás — 2. emelet, 65,71 m²">1. lakás — 2. emelet, 65,71 m²</option>
+            <option value="2. lakás — 2. emelet, 54,34 m²">2. lakás — 2. emelet, 54,34 m²</option>
+            <option value="3. lakás — 2. emelet, 71,62 m²">3. lakás — 2. emelet, 71,62 m²</option>
+            <option value="4. lakás — tetőtéri szint, 52,97 m²">4. lakás — tetőtéri szint, 52,97 m²</option>
+            <option value="5. lakás — tetőtéri szint, 51,16 m²">5. lakás — tetőtéri szint, 51,16 m²</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-msg">Üzenet</label>
+          <textarea id="f-msg" name="uzenet" placeholder="Kérdése, üzenete…"></textarea>
+        </div>
+        <label class="gdpr" id="gdprBox">
+          <input type="checkbox" id="f-gdpr" name="adatkezeles" required>
+          <span>Elolvastam és elfogadom az <a href="#">adatkezelési tájékoztatót</a>, és hozzájárulok adataim ajánlatadás céljából történő kezeléséhez. *<br><span class="err-msg" id="gdprErr">Az ajánlatkéréshez el kell fogadnia az adatkezelési tájékoztatót.</span></span>
+        </label>
+        <button type="submit" class="btn btn-solid">Ajánlatot kérek</button>
+        <div class="form-ok" id="formOk" role="status">
+          <h3>Köszönjük!</h3>
+          <p>Hamarosan felvesszük önnel a kapcsolatot.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LÁBLÉC ============ -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <svg width="30" height="27" viewBox="0 0 34 30" fill="none" aria-hidden="true">
+          <path d="M17 2 C14 8 13 13 17 19 C21 13 20 8 17 2 Z" fill="#C6A868"/>
+          <path d="M8 7 C8 13 11 17 16.2 19.4 C15.5 13.5 13 9.5 8 7 Z" fill="#A9843E"/>
+          <path d="M26 7 C26 13 23 17 17.8 19.4 C18.5 13.5 21 9.5 26 7 Z" fill="#A9843E"/>
+          <path d="M4 20 C8 26 26 26 30 20" stroke="#C6A868" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="foot-brand">EÖTVÖS</div>
+        <p>Öt exkluzív lakás Terézváros szívében.<br>A látványtervek illusztrációk; a bemutatott enteriőr az öt elérhető lakás egyikének látványterve.</p>
+      </div>
+      <div>
+        <h4>Kapcsolat</h4>
+        <ul>
+          <li>1067 Budapest, Eötvös utca 20.</li>
+          <li><a href="mailto:info@eotvosutca20.hu">info@eotvosutca20.hu</a></li>
+          <li><a href="tel:+36703621119">+36 70 362 1119</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Információk</h4>
+        <ul>
+          <li><a href="#">Impresszum</a></li>
+          <li><a href="#">Adatkezelési tájékoztató</a></li>
+          <li><a href="#gyik">Gyakori kérdések</a></li>
+          <li><a href="#ajanlat">Ajánlatkérés</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Eötvös utca 20. Minden jog fenntartva.</span>
+      <span>Eötvös utca · VI. kerület</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* --- sticky nav + aktív szekció --- */
+var nav=document.getElementById('nav');
+function onScroll(){ if(window.scrollY>40){nav.classList.add('scrolled');}else{nav.classList.remove('scrolled');} }
+window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+var links=document.querySelectorAll('.navlinks a[href^="#"]');
+var sections=[];
+links.forEach(function(a){var id=a.getAttribute('href').slice(1);var el=document.getElementById(id);if(el)sections.push({el:el,a:a});});
+var spy=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){
+      links.forEach(function(a){a.classList.remove('active');});
+      var m=sections.find(function(s){return s.el===e.target;});
+      if(m)m.a.classList.add('active');
+    }
+  });
+},{rootMargin:'-45% 0px -50% 0px'});
+sections.forEach(function(s){spy.observe(s.el);});
+
+/* --- mobil menü --- */
+var burger=document.getElementById('burger');
+burger.addEventListener('click',function(){
+  var open=nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded',open);
+  burger.setAttribute('aria-label',open?'Menü bezárása':'Menü megnyitása');
+});
+links.forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');burger.setAttribute('aria-expanded','false');});});
+
+/* --- scroll reveal --- */
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var rev=document.querySelectorAll('.reveal');
+if(reduce){rev.forEach(function(el){el.classList.add('in');});}
+else{
+  var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.12});
+  rev.forEach(function(el){ro.observe(el);});
+}
+
+/* --- Érdekel gombok: űrlapra görgetés + lakás előválasztása --- */
+var flatSelect=document.getElementById('f-flat');
+document.querySelectorAll('.btn-row').forEach(function(b){
+  b.addEventListener('click',function(){
+    var v=b.getAttribute('data-flat');
+    for(var i=0;i<flatSelect.options.length;i++){
+      if(flatSelect.options[i].value===v){flatSelect.selectedIndex=i;break;}
+    }
+    document.getElementById('ajanlat').scrollIntoView({behavior:reduce?'auto':'smooth'});
+  });
+});
+
+/* --- GYIK accordion --- */
+document.querySelectorAll('.acc-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var open=btn.getAttribute('aria-expanded')==='true';
+    document.querySelectorAll('.acc-btn').forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      document.getElementById(b.getAttribute('aria-controls')).style.maxHeight='0';
+    });
+    if(!open){
+      btn.setAttribute('aria-expanded','true');
+      var p=document.getElementById(btn.getAttribute('aria-controls'));
+      p.style.maxHeight=p.scrollHeight+'px';
+    }
+  });
+});
+
+/* --- lightbox --- */
+var figs=Array.prototype.slice.call(document.querySelectorAll('#gal figure'));
+var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
+var cur=0,lastFocus=null;
+function show(i){
+  cur=(i+figs.length)%figs.length;
+  lbImg.src=figs[cur].querySelector('img').src;
+  lbImg.alt=figs[cur].querySelector('img').alt;
+  lbCap.textContent=figs[cur].getAttribute('data-cap');
+}
+function openLb(i){lastFocus=document.activeElement;show(i);lb.classList.add('open');document.body.style.overflow='hidden';document.getElementById('lbClose').focus();}
+function closeLb(){lb.classList.remove('open');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
+figs.forEach(function(f,i){
+  f.setAttribute('tabindex','0');
+  f.setAttribute('role','button');
+  f.setAttribute('aria-label',f.getAttribute('data-cap')+' – kép nagyítása');
+  f.addEventListener('click',function(){openLb(i);});
+  f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(i);}});
+});
+document.getElementById('lbClose').addEventListener('click',closeLb);
+document.getElementById('lbPrev').addEventListener('click',function(){show(cur-1);});
+document.getElementById('lbNext').addEventListener('click',function(){show(cur+1);});
+lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+document.addEventListener('keydown',function(e){
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowLeft')show(cur-1);
+  if(e.key==='ArrowRight')show(cur+1);
+});
+
+/* --- űrlap validáció --- */
+var form=document.getElementById('leadForm');
+var nameF=document.getElementById('f-name'),emailF=document.getElementById('f-email'),gdprF=document.getElementById('f-gdpr'),gdprBox=document.getElementById('gdprBox');
+function setErr(input,on){input.closest('.field').classList[on?'add':'remove']('err');}
+function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);}
+[nameF,emailF].forEach(function(f){f.addEventListener('input',function(){setErr(f,false);});});
+gdprF.addEventListener('change',function(){gdprBox.classList.remove('err-c');document.getElementById('gdprErr').style.display='none';});
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  var ok=true;
+  if(!nameF.value.trim()){setErr(nameF,true);ok=false;}
+  if(!validEmail(emailF.value.trim())){setErr(emailF,true);ok=false;}
+  if(!gdprF.checked){gdprBox.classList.add('err-c');document.getElementById('gdprErr').style.display='block';ok=false;}
+  if(!ok){
+    var firstErr=form.querySelector('.field.err input, .gdpr.err-c input');
+    if(firstErr)firstErr.focus();
+    return;
+  }
+  var done=function(){
+    form.querySelectorAll('.field,.gdpr,button[type="submit"]').forEach(function(el){el.style.display='none';});
+    document.getElementById('formOk').classList.add('show');
+  };
+  var action=form.getAttribute('action')||'';
+  if(action.indexOf('FORM_ID')!==-1){
+    /* A beküldési endpoint még nincs bekötve (lásd a kommentet a form felett) —
+       demó módban csak a visszaigazolást jelenítjük meg. */
+    console.warn('Űrlap: a Formspree FORM_ID még nincs beállítva, a beküldés nem történt meg.');
+    done();
+    return;
+  }
+  fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    .then(function(){done();})
+    .catch(function(){done();});
+});
+})();
+</script>
+</body>
+</html>
