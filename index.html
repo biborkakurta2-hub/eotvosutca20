@@ -880,10 +880,12 @@ if(!reduce&&canvas.getContext){
     return null;
   }
   /* álló (telefonos) képernyőn: indulásnál az eredeti nézet (a kép a felső 72%-ot tölti ki),
-     görgetésre távolabbi nézetre vált: a kép szélességének ~62%-a látszik, a szélei a háttérbe olvadnak */
-  var PORTRAIT_VIS=.62,PORTRAIT_Y=.40,BG='29,26,21',FAR_FROM=.06,FAR_TO=.26;
+     görgetésre távolabbi nézetre vált: a kép szélességének ~56%-a látszik, közvetlenül a menüsor alatt kezdődik, az alja a háttérbe olvad */
+  var PORTRAIT_VIS=.56,BG='29,26,21',FAR_FROM=.06,FAR_TO=.26;
   var shadeFar=document.getElementById('buildShadeFar'),shadeNear=document.getElementById('buildShade'),far=0;
   function portrait(){return cw<ch;}
+  var navEl=document.querySelector('nav');
+  function navH(){return navEl?navEl.offsetHeight:0;}
   function drawCover(im,alpha){
     if(!im)return;
     var w,h,x,y,iw=im.naturalWidth,ih=im.naturalHeight;
@@ -891,7 +893,7 @@ if(!reduce&&canvas.getContext){
     var r=Math.max(cw/iw,bh/ih);
     w=iw*r;h=ih*r;x=(cw-w)*FOCUS_X;y=(bh-h)*FOCUS_Y;
     if(portrait()&&far>0){
-      var w2=cw/PORTRAIT_VIS,h2=w2*ih/iw,x2=(cw-w2)*.52,y2=ch*PORTRAIT_Y-h2/2;
+      var w2=cw/PORTRAIT_VIS,h2=w2*ih/iw,x2=(cw-w2)*.52,y2=navH();
       x+=(x2-x)*far;y+=(y2-y)*far;w+=(w2-w)*far;h+=(h2-h)*far;
     }
     ctx.globalAlpha=alpha;
@@ -902,9 +904,6 @@ if(!reduce&&canvas.getContext){
   }
   function edgeFade(y,h){
     var f=h*.1,g;
-    g=ctx.createLinearGradient(0,y,0,y+f);
-    g.addColorStop(0,'rgba('+BG+',1)');g.addColorStop(1,'rgba('+BG+',0)');
-    ctx.fillStyle=g;ctx.fillRect(0,y-1,cw,f+1);
     g=ctx.createLinearGradient(0,y+h-f,0,y+h);
     g.addColorStop(0,'rgba('+BG+',0)');g.addColorStop(1,'rgba('+BG+',1)');
     ctx.fillStyle=g;ctx.fillRect(0,y+h-f,cw,f+1);
