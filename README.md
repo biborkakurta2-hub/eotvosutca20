@@ -48,4 +48,4 @@ Képek helye: `images/lakasok/`
 
 `emails/visszaigazolas.html` – az ajánlatkérés után a látogatónak küldendő automatikus válaszlevél a weboldal stílusában.
 A `{{nev}}`, `{{email}}`, `{{telefon}}`, `{{lakas}}`, `{{uzenet}}` mezőket a küldő rendszer (pl. Make.com) cseréli ki az űrlap adataira.
-A képek a `images/email/` mappából, a weboldal címéről töltődnek, ezért a levél csak az élesítés után jelenik meg hiánytalanul.
+A logó (`images/email/lotusz.png`) a weboldal címéről töltődik, ezért a levélben csak az élesítés után látszik.
