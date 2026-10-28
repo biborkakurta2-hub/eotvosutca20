@@ -30,3 +30,16 @@ Az `images` mappában töltsd fel az új képet **ugyanazzal a fájlnévvel** (A
 - A fejlécben a ház görgetésre „felépül”: előbb lebomlik a régi tető, majd ráépül az új emelet.
 - A képkockák az `images/epites` mappában vannak: `a_` (felemelkedés az utcáról), `b_` (tetőbontás), `c_` (ráépítés), `a_` 48, `b_` és `c_` 61 kocka (a két utóbbi Higgsfield-videóból).
 - A görgetés hosszát az `index.html`-ben a `.hero{...height:300vh}` érték adja: kisebb szám = gyorsabban felépül.
+
+## Lakások adatlapjai
+
+A „Lakások” szekcióban minden lakásnak saját füle van (`#lakas-1` … `#lakas-5` hivatkozással közvetlenül is nyitható):
+fejléc az alapterülettel és az „Ajánlatot kérek erre a lakásra” gombbal (az űrlapon előre kiválasztja a lakást),
+alatta az alaprajz, és ha van, a berendezett felülnézet, végül a belső látványképek.
+
+Képek helye: `images/lakasok/`
+- `lN-alaprajz.webp` – alaprajz helyiségenkénti m²-rel (N = lakás száma)
+- `lN-felulnezet.webp` – berendezett felülnézet (ha van, a lakásnál megjelenik a „Berendezett felülnézet” váltó)
+- további enteriőrök tetszőleges néven, pl. `l2-nappali.webp`
+
+Új lakás képeinek felvételekor az 1. lakás blokkját (`<article id="lakas-1">`) érdemes mintának venni.

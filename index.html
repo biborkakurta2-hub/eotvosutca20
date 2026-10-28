@@ -158,52 +158,61 @@ nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* ---------- lakások ---------- */
 #lakasok{background:var(--paper-2)}
-.flat-table{width:100%;border-collapse:collapse;margin-top:10px}
-.flat-table thead th{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;text-align:left;padding:0 14px 14px;border-bottom:1px solid var(--ink)}
-.flat-table tbody td{padding:24px 14px;border-bottom:1px solid var(--gold-line);vertical-align:middle}
-.flat-table .fname{font-family:var(--serif);font-size:26px;font-weight:500;white-space:nowrap}
-.flat-table .lvl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-top:4px;font-weight:500}
-.flat-table .area{font-family:var(--serif);font-size:24px;white-space:nowrap}
-.flat-table .meta{color:var(--ink-soft);font-size:15.5px}
 .status{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
 .status::before{content:"";width:8px;height:8px;border-radius:50%;flex:none}
 .status.ok{color:var(--ok)}.status.ok::before{background:var(--ok)}
 .status.res{color:#B07A2A}.status.res::before{background:#B07A2A}
 .status.sold{color:#9A3B3B}.status.sold::before{background:#9A3B3B}
-.price{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:16px}
-.btn-row{background:transparent;border:1px solid var(--gold);color:var(--gold);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;padding:11px 20px;cursor:pointer;transition:.25s;font-family:var(--sans);white-space:nowrap}
-.btn-row:hover{background:var(--gold);color:#fff}
-tr.flat-row{transition:background .25s}
-tr.flat-row:hover{background:rgba(198,168,104,.12)}
+.price{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:17px}
 .tnote{margin-top:22px;font-size:14px}
-@media(max-width:860px){
-  .flat-table thead{display:none}
-  .flat-table,.flat-table tbody,.flat-table tr,.flat-table td{display:block;width:100%}
-  tr.flat-row{border:1px solid var(--gold-line);background:var(--paper);margin-bottom:18px;padding:22px}
-  .flat-table tbody td{border:none;padding:6px 0}
-  .flat-table td[data-l]::before{content:attr(data-l);display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:2px}
-  .flat-table td.cell-btn{padding-top:16px}
-  .btn-row{width:100%;padding:14px}
+/* lakásválasztó fülek */
+.flat-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:44px}
+.ft{background:transparent;border:1px solid var(--gold-line);padding:16px 18px;text-align:left;cursor:pointer;font-family:var(--sans);color:var(--ink);transition:background .25s,border-color .25s,color .25s}
+.ft b{display:block;font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.1}
+.ft span{display:block;margin-top:4px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.ft:hover{border-color:var(--gold);background:rgba(198,168,104,.10)}
+.ft[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#EFE9DC}
+.ft[aria-selected="true"] span{color:var(--gold-line)}
+/* lakás adatlap */
+.flat-panels{margin-top:18px}
+.flat-panel{background:var(--paper);padding:clamp(22px,4vw,52px);box-shadow:0 24px 60px rgba(38,34,25,.10)}
+.fp-head{display:grid;grid-template-columns:1fr auto;gap:30px 60px;align-items:end;padding-bottom:30px;border-bottom:1px solid var(--gold-line)}
+.fp-lvl{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.fp-head h3{font-family:var(--serif);font-weight:500;font-size:clamp(40px,5vw,60px);line-height:1;margin:10px 0 14px}
+.fp-desc{color:var(--ink-soft);max-width:560px}
+.fp-side{text-align:right}
+.fp-area{font-family:var(--serif);font-size:clamp(44px,5.4vw,66px);line-height:1;font-weight:500}
+.fp-area small{font-size:.45em;color:var(--ink-soft)}
+.fp-meta{display:flex;gap:18px;justify-content:flex-end;align-items:center;margin:12px 0 20px}
+.fp-cta{border:none}
+.fp-views{display:inline-flex;margin-top:30px;border:1px solid var(--gold-line)}
+.fv-btn{background:transparent;border:none;padding:11px 20px;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;transition:.25s}
+.fv-btn+.fv-btn{border-left:1px solid var(--gold-line)}
+.fv-btn[aria-pressed="true"]{background:var(--gold);color:#fff}
+.fp-plan{margin-top:16px;background:#fff}
+.fp-plan-only{margin-top:34px}
+.fp-plan figure{cursor:zoom-in}
+.fp-plan img{width:100%;height:auto;display:block}
+.fp-note{margin-top:14px;font-size:14px;color:var(--ink-soft);max-width:860px}
+.fp-note b{font-weight:500;color:var(--ink)}
+.fp-gal{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+.fp-gal figure{position:relative;overflow:hidden;cursor:zoom-in;aspect-ratio:16/9;background:#111}
+.fp-gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.fp-gal figure:hover img{transform:scale(1.04)}
+.fp-gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 13px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#fff;background:linear-gradient(to top,rgba(15,13,10,.72),transparent)}
+.fp-soon{margin-top:40px;border:1px dashed var(--gold-line);padding:34px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.fp-soon span{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink-soft)}
+.fp-soon-link{color:var(--gold);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;text-decoration:none;border-bottom:1px solid var(--gold-line);padding-bottom:3px}
+@media(max-width:900px){
+  .flat-tabs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:-4vw;margin-right:-4vw;padding:0 4vw 4px;-webkit-overflow-scrolling:touch}
+  .ft{flex:0 0 auto;min-width:150px;scroll-snap-align:start}
+  .fp-head{grid-template-columns:1fr;align-items:start}
+  .fp-side{text-align:left}
+  .fp-meta{justify-content:flex-start}
+  .fp-cta{width:100%;text-align:center}
+  .fp-views{display:flex}.fv-btn{flex:1}
+  .fp-gal{grid-template-columns:1fr}
 }
-
-/* ---------- alaprajz ---------- */
-.plan-grid{display:grid;grid-template-columns:.8fr 1.6fr;gap:60px;align-items:center}
-.plan-grid figure{background:#fff;padding:26px;box-shadow:0 20px 50px rgba(38,34,25,.10)}
-@media(max-width:900px){.plan-grid{grid-template-columns:1fr;gap:40px}}
-
-/* ---------- galéria ---------- */
-#galeria{background:var(--dark);color:#EFE9DC}
-#galeria .eyebrow{color:var(--gold-line)}
-#galeria .lead{color:rgba(239,233,220,.72)}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
-.gal figure{position:relative;overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;background:#111}
-.gal figure.wide{grid-column:span 2;aspect-ratio:auto}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,opacity .4s}
-.gal figure:hover img{transform:scale(1.045)}
-.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:36px 18px 14px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#fff;background:linear-gradient(to top,rgba(15,13,10,.75),transparent)}
-@media(max-width:820px){.gal{grid-template-columns:1fr 1fr}.gal figure.wide{grid-column:span 2}}
-@media(max-width:540px){.gal{grid-template-columns:1fr}.gal figure.wide{grid-column:span 1}}
-.gal-note{margin-top:26px;font-family:var(--serif);font-style:italic;color:rgba(239,233,220,.6);font-size:15px}
 /* lightbox */
 .lb{position:fixed;inset:0;background:rgba(15,13,10,.94);z-index:200;display:none;align-items:center;justify-content:center;flex-direction:column;padding:4vh 4vw}
 .lb.open{display:flex}
@@ -337,7 +346,6 @@ footer li{list-style:none;margin-bottom:8px}
     <ul class="navlinks" id="navlinks">
       <li><a href="#projekt">A projekt</a></li>
       <li><a href="#lakasok">Lakások</a></li>
-      <li><a href="#galeria">Galéria</a></li>
       <li><a href="#muszaki">Műszaki tartalom</a></li>
       <li><a href="#lokacio">Lokáció</a></li>
       <li><a href="#gyik">GYIK</a></li>
@@ -446,102 +454,122 @@ footer li{list-style:none;margin-bottom:8px}
   <div class="wrap">
     <p class="eyebrow reveal">A lakások</p>
     <h2 class="reveal">Öt otthon, két szinten</h2>
-    <p class="lead reveal">A második emeleten három, a tetőtéri szinten két lakás készül. Válassza ki az önhöz illő otthont, és kérjen személyre szabott ajánlatot.</p>
+    <p class="lead reveal">A második emeleten három, a tetőtéri szinten két lakás készül. Válassza ki a lakást: megnézheti az alaprajzát, a látványterveit, és egy kattintással ajánlatot kérhet rá.</p>
 
-    <table class="flat-table reveal" aria-label="Elérhető lakások listája">
-      <thead>
-        <tr>
-          <th scope="col">Lakás</th>
-          <th scope="col">Kialakítás</th>
-          <th scope="col">Alapterület</th>
-          <th scope="col">Státusz</th>
-          <th scope="col">Ár</th>
-          <th scope="col"><span style="position:absolute;clip:rect(0 0 0 0)">Érdeklődés</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="flat-row">
-          <td><span class="fname">1. lakás</span><span class="lvl">2. emelet</span></td>
-          <td class="meta" data-l="Kialakítás">egyszintes · 2 szoba</td>
-          <td class="area" data-l="Alapterület">65,71 m²</td>
-          <td data-l="Státusz"><span class="status ok">Elérhető</span></td>
-          <td class="price" data-l="Ár">Ár érdeklődésre</td>
-          <td class="cell-btn"><button class="btn-row" data-flat="1. lakás — 2. emelet, 65,71 m²">Érdekel</button></td>
-        </tr>
-        <tr class="flat-row">
-          <td><span class="fname">2. lakás</span><span class="lvl">2. emelet</span></td>
-          <td class="meta" data-l="Kialakítás">egyszintes · 2 szoba</td>
-          <td class="area" data-l="Alapterület">54,34 m²</td>
-          <td data-l="Státusz"><span class="status ok">Elérhető</span></td>
-          <td class="price" data-l="Ár">Ár érdeklődésre</td>
-          <td class="cell-btn"><button class="btn-row" data-flat="2. lakás — 2. emelet, 54,34 m²">Érdekel</button></td>
-        </tr>
-        <tr class="flat-row">
-          <td><span class="fname">3. lakás</span><span class="lvl">2. emelet</span></td>
-          <td class="meta" data-l="Kialakítás">kétszintes · 3 szoba</td>
-          <td class="area" data-l="Alapterület">71,62 m²</td>
-          <td data-l="Státusz"><span class="status ok">Elérhető</span></td>
-          <td class="price" data-l="Ár">Ár érdeklődésre</td>
-          <td class="cell-btn"><button class="btn-row" data-flat="3. lakás — 2. emelet, 71,62 m²">Érdekel</button></td>
-        </tr>
-        <tr class="flat-row">
-          <td><span class="fname">4. lakás</span><span class="lvl">Tetőtéri szint</span></td>
-          <td class="meta" data-l="Kialakítás">egyszintes · 2 szoba</td>
-          <td class="area" data-l="Alapterület">52,97 m²</td>
-          <td data-l="Státusz"><span class="status ok">Elérhető</span></td>
-          <td class="price" data-l="Ár">Ár érdeklődésre</td>
-          <td class="cell-btn"><button class="btn-row" data-flat="4. lakás — tetőtéri szint, 52,97 m²">Érdekel</button></td>
-        </tr>
-        <tr class="flat-row">
-          <td><span class="fname">5. lakás</span><span class="lvl">Tetőtéri szint</span></td>
-          <td class="meta" data-l="Kialakítás">egyszintes · 2 szoba</td>
-          <td class="area" data-l="Alapterület">51,16 m²</td>
-          <td data-l="Státusz"><span class="status ok">Elérhető</span></td>
-          <td class="price" data-l="Ár">Ár érdeklődésre</td>
-          <td class="cell-btn"><button class="btn-row" data-flat="5. lakás — tetőtéri szint, 51,16 m²">Érdekel</button></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="flat-tabs reveal" role="tablist" aria-label="Lakások">
+        <button class="ft" role="tab" id="ft-1" aria-controls="lakas-1" aria-selected="true"><b>1. lakás</b><span>65,71 m² · 2. emelet</span></button>
+        <button class="ft" role="tab" id="ft-2" aria-controls="lakas-2" aria-selected="false" tabindex="-1"><b>2. lakás</b><span>54,34 m² · 2. emelet</span></button>
+        <button class="ft" role="tab" id="ft-3" aria-controls="lakas-3" aria-selected="false" tabindex="-1"><b>3. lakás</b><span>71,62 m² · 2. emelet és tetőtér</span></button>
+        <button class="ft" role="tab" id="ft-4" aria-controls="lakas-4" aria-selected="false" tabindex="-1"><b>4. lakás</b><span>52,97 m² · Tetőtéri szint</span></button>
+        <button class="ft" role="tab" id="ft-5" aria-controls="lakas-5" aria-selected="false" tabindex="-1"><b>5. lakás</b><span>51,16 m² · Tetőtéri szint</span></button>
+    </div>
+
+    <div class="flat-panels reveal">
+      <article class="flat-panel" id="lakas-1" role="tabpanel" aria-labelledby="ft-1">
+        <header class="fp-head">
+          <div>
+            <p class="fp-lvl">2. emelet · egyszintes · 2 szoba</p>
+            <h3>1. lakás</h3>
+            <p class="fp-desc">Világos, egybenyitott nappali–étkező–konyha szigettel, hálószoba külön gardróbbal, kádas fürdőszoba és különálló WC.</p>
+          </div>
+          <div class="fp-side">
+            <p class="fp-area">65,71<small> m²</small></p>
+            <p class="fp-meta"><span class="status ok">Elérhető</span><span class="price">Ár érdeklődésre</span></p>
+            <button class="btn btn-solid fp-cta" data-flat="1. lakás — 2. emelet, 65,71 m²">Ajánlatot kérek erre a lakásra</button>
+          </div>
+        </header>
+        <div class="fp-views" role="group" aria-label="Nézet"><button class="fv-btn" aria-pressed="true" data-view="top">Berendezett felülnézet</button><button class="fv-btn" aria-pressed="false" data-view="plan">Alaprajz m²-rel</button></div>
+        <div class="fp-plan">
+          <figure class="fv lbx" data-view="top" data-cap="1. lakás – berendezett felülnézet"><img src="images/lakasok/l1-felulnezet.webp" alt="Az 1. lakás berendezett felülnézeti látványterve" loading="lazy"></figure>
+          <figure class="fv lbx" data-view="plan" data-cap="1. lakás – alaprajz" hidden><img src="images/lakasok/l1-alaprajz.webp" alt="Az 1. lakás alaprajza helyiségenkénti alapterülettel" loading="lazy"></figure>
+        </div>
+        <p class="fp-note fp-note-plan"><b>Alaprajz a tervek alapján.</b> Az alaprajz és a felülnézet a jóváhagyott tervrajz szerinti elrendezést mutatja; a helyiségenkénti területek számított, tájékoztató értékek, a lakás hivatalos hasznos alapterülete 65,71 m².</p>
+        <div class="fp-gal">
+          <figure class="lbx" data-cap="Nappali"><img src="images/lakasok/l1-nappali.webp" alt="Nappali – bouclé kanapé és fotel, márvány dohányzóasztal, eredeti magas ablak" loading="lazy"><figcaption>Nappali</figcaption></figure>
+          <figure class="lbx" data-cap="Konyha és étkező"><img src="images/lakasok/l1-etkezo-konyha.webp" alt="Konyha és étkező – diófa konyhabútor szigettel, hatszemélyes étkezőasztal" loading="lazy"><figcaption>Konyha és étkező</figcaption></figure>
+          <figure class="lbx" data-cap="Konyha"><img src="images/lakasok/l1-konyha.webp" alt="Konyha – diófa frontok, fekete márvány munkapult és hátfal, sárgaréz csaptelep" loading="lazy"><figcaption>Konyha</figcaption></figure>
+          <figure class="lbx" data-cap="Hálószoba"><img src="images/lakasok/l1-haloszoba.webp" alt="Hálószoba – kárpitozott franciaágy, diófa falburkolat, íróasztal az ablaknál" loading="lazy"><figcaption>Hálószoba</figcaption></figure>
+        </div>
+        <p class="fp-note"><b>Tájékoztató jellegű látványképek.</b> A belső képek illusztrációk: a berendezés, a bútorok, a világítás és az anyaghasználat a hangulatot mutatják, nem képezik az eladás tárgyát.</p>
+      </article>
+      <article class="flat-panel" id="lakas-2" role="tabpanel" aria-labelledby="ft-2" hidden>
+        <header class="fp-head">
+          <div>
+            <p class="fp-lvl">2. emelet · egyszintes · 2 szoba</p>
+            <h3>2. lakás</h3>
+            <p class="fp-desc">Tágas nappali–étkező–konyha, hálószoba gardróbbal, fürdőszoba, külön WC és kamra.</p>
+          </div>
+          <div class="fp-side">
+            <p class="fp-area">54,34<small> m²</small></p>
+            <p class="fp-meta"><span class="status ok">Elérhető</span><span class="price">Ár érdeklődésre</span></p>
+            <button class="btn btn-solid fp-cta" data-flat="2. lakás — 2. emelet, 54,34 m²">Ajánlatot kérek erre a lakásra</button>
+          </div>
+        </header>
+        <div class="fp-plan fp-plan-only">
+          <figure class="fv lbx" data-view="plan" data-cap="2. lakás – alaprajz"><img src="images/lakasok/l2-alaprajz.webp" alt="A 2. lakás alaprajza helyiségenkénti alapterülettel" loading="lazy"></figure>
+        </div>
+        <p class="fp-note fp-note-plan"><b>Alaprajz a tervek alapján.</b> Az alaprajz a jóváhagyott tervrajz szerinti elrendezést mutatja; a helyiségenkénti területek számított, tájékoztató értékek, a lakás hivatalos hasznos alapterülete 54,34 m².</p>
+        <div class="fp-soon"><span>Enteriőr látványtervek hamarosan</span><a href="#ajanlat" class="fp-soon-link" data-flat="2. lakás — 2. emelet, 54,34 m²">Kérje el elsőként</a></div>
+      </article>
+      <article class="flat-panel" id="lakas-3" role="tabpanel" aria-labelledby="ft-3" hidden>
+        <header class="fp-head">
+          <div>
+            <p class="fp-lvl">2. emelet és tetőtér · kétszintes · 3 szoba</p>
+            <h3>3. lakás</h3>
+            <p class="fp-desc">Kétszintes otthon: lent nappali–étkező, konyha, előszoba és WC; fent két hálószoba és fürdőszoba.</p>
+          </div>
+          <div class="fp-side">
+            <p class="fp-area">71,62<small> m²</small></p>
+            <p class="fp-meta"><span class="status ok">Elérhető</span><span class="price">Ár érdeklődésre</span></p>
+            <button class="btn btn-solid fp-cta" data-flat="3. lakás — 2. emelet, 71,62 m²">Ajánlatot kérek erre a lakásra</button>
+          </div>
+        </header>
+        <div class="fp-plan fp-plan-only">
+          <figure class="fv lbx" data-view="plan" data-cap="3. lakás – alaprajz"><img src="images/lakasok/l3-alaprajz.webp" alt="A 3. lakás alaprajza helyiségenkénti alapterülettel" loading="lazy"></figure>
+        </div>
+        <p class="fp-note fp-note-plan"><b>Alaprajz a tervek alapján.</b> Az alaprajz a jóváhagyott tervrajz szerinti elrendezést mutatja; a helyiségenkénti területek számított, tájékoztató értékek, a lakás hivatalos hasznos alapterülete 71,62 m².</p>
+        <div class="fp-soon"><span>Enteriőr látványtervek hamarosan</span><a href="#ajanlat" class="fp-soon-link" data-flat="3. lakás — 2. emelet, 71,62 m²">Kérje el elsőként</a></div>
+      </article>
+      <article class="flat-panel" id="lakas-4" role="tabpanel" aria-labelledby="ft-4" hidden>
+        <header class="fp-head">
+          <div>
+            <p class="fp-lvl">Tetőtéri szint · egyszintes · 2 szoba</p>
+            <h3>4. lakás</h3>
+            <p class="fp-desc">Nagy, egybenyitott nappali–étkező–konyha, hálószoba, fürdőszoba és külön WC a tetőtéri szinten.</p>
+          </div>
+          <div class="fp-side">
+            <p class="fp-area">52,97<small> m²</small></p>
+            <p class="fp-meta"><span class="status ok">Elérhető</span><span class="price">Ár érdeklődésre</span></p>
+            <button class="btn btn-solid fp-cta" data-flat="4. lakás — tetőtéri szint, 52,97 m²">Ajánlatot kérek erre a lakásra</button>
+          </div>
+        </header>
+        <div class="fp-plan fp-plan-only">
+          <figure class="fv lbx" data-view="plan" data-cap="4. lakás – alaprajz"><img src="images/lakasok/l4-alaprajz.webp" alt="A 4. lakás alaprajza helyiségenkénti alapterülettel" loading="lazy"></figure>
+        </div>
+        <p class="fp-note fp-note-plan"><b>Alaprajz a tervek alapján.</b> Az alaprajz a jóváhagyott tervrajz szerinti elrendezést mutatja; a helyiségenkénti területek számított, tájékoztató értékek, a lakás hivatalos hasznos alapterülete 52,97 m².</p>
+        <div class="fp-soon"><span>Enteriőr látványtervek hamarosan</span><a href="#ajanlat" class="fp-soon-link" data-flat="4. lakás — tetőtéri szint, 52,97 m²">Kérje el elsőként</a></div>
+      </article>
+      <article class="flat-panel" id="lakas-5" role="tabpanel" aria-labelledby="ft-5" hidden>
+        <header class="fp-head">
+          <div>
+            <p class="fp-lvl">Tetőtéri szint · egyszintes · 2 szoba</p>
+            <h3>5. lakás</h3>
+            <p class="fp-desc">Egybenyitott nappali–étkező–konyha, hálószoba gardróbbal, fürdőszoba és külön WC a tetőtéri szinten.</p>
+          </div>
+          <div class="fp-side">
+            <p class="fp-area">51,16<small> m²</small></p>
+            <p class="fp-meta"><span class="status ok">Elérhető</span><span class="price">Ár érdeklődésre</span></p>
+            <button class="btn btn-solid fp-cta" data-flat="5. lakás — tetőtéri szint, 51,16 m²">Ajánlatot kérek erre a lakásra</button>
+          </div>
+        </header>
+        <div class="fp-plan fp-plan-only">
+          <figure class="fv lbx" data-view="plan" data-cap="5. lakás – alaprajz"><img src="images/lakasok/l5-alaprajz.webp" alt="Az 5. lakás alaprajza helyiségenkénti alapterülettel" loading="lazy"></figure>
+        </div>
+        <p class="fp-note fp-note-plan"><b>Alaprajz a tervek alapján.</b> Az alaprajz a jóváhagyott tervrajz szerinti elrendezést mutatja; a helyiségenkénti területek számított, tájékoztató értékek, a lakás hivatalos hasznos alapterülete 51,16 m².</p>
+        <div class="fp-soon"><span>Enteriőr látványtervek hamarosan</span><a href="#ajanlat" class="fp-soon-link" data-flat="5. lakás — tetőtéri szint, 51,16 m²">Kérje el elsőként</a></div>
+      </article>
+    </div>
     <p class="tnote caption">Összes hasznos lakóterület: 295,80 m². Az adatok tájékoztató jellegűek.</p>
-  </div>
-</section>
-
-<!-- ============ ALAPRAJZ ============ -->
-<section id="alaprajz">
-  <div class="wrap">
-    <div class="plan-grid">
-      <div class="reveal">
-        <p class="eyebrow">Alaprajz</p>
-        <h2>Az 5. lakás alaprajza</h2>
-        <p class="lead">51,16 m² a tetőtéri szinten: tágas nappali étkezővel és konyhával, hálószoba gardróbbal, két fürdőszoba. Látványterv, tájékoztató jellegű ábra.</p>
-        <p class="lead" style="margin-top:18px">A többi lakás alaprajzát kérésre örömmel megküldjük — <a href="#ajanlat" style="color:var(--gold)">kérjen ajánlatot</a>.</p>
-      </div>
-      <figure class="reveal">
-        <img src="images/alaprajz.webp" alt="Az 5. lakás felülnézeti alaprajza – 51,16 m², nappali, konyha, hálószoba, két fürdőszoba" loading="lazy">
-        <figcaption class="figlabel">Az 5. lakás — 51,16 m²</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ============ GALÉRIA ============ -->
-<section id="galeria">
-  <div class="wrap">
-    <p class="eyebrow reveal">Enteriőrök</p>
-    <h2 class="reveal">Látványtervek</h2>
-    <p class="lead reveal">Beépített vitrines tárolók, márványburkolatok és meleg tónusú, elegáns anyaghasználat — kattintson a képekre a nagyításhoz.</p>
-    <div class="gal reveal" id="gal">
-      <figure class="wide" data-cap="Nappali"><img src="images/hero.webp" alt="Nappali látványterve – világos kanapé, vitrines tárolófal, márvány dohányzóasztal" loading="lazy"><figcaption>Nappali</figcaption></figure>
-      <figure data-cap="Étkező"><img src="images/etkezo.webp" alt="Étkező látványterve – márvány asztal, hangulatvilágítású vitrines fal" loading="lazy"><figcaption>Étkező</figcaption></figure>
-      <figure data-cap="Konyha"><img src="images/konyha.webp" alt="Konyha látványterve – sötét frontok, kőmintás munkapult" loading="lazy"><figcaption>Konyha</figcaption></figure>
-      <figure data-cap="Konyha és nappali"><img src="images/konyha-nappali.webp" alt="Egybenyitott konyha és nappali látványterve" loading="lazy"><figcaption>Konyha és nappali</figcaption></figure>
-      <figure data-cap="Hálószoba"><img src="images/haloszoba.webp" alt="Hálószoba látványterve – pasztell tónusok, üvegfrontos beépített szekrények" loading="lazy"><figcaption>Hálószoba</figcaption></figure>
-      <figure data-cap="Gardrób"><img src="images/gardrob.webp" alt="Gardrób látványterve – üvegfrontos, világított beépített szekrény" loading="lazy"><figcaption>Gardrób</figcaption></figure>
-      <figure data-cap="Fürdőszoba"><img src="images/furdoszoba.webp" alt="Fürdőszoba látványterve – márványburkolat, fekete szerelvények" loading="lazy"><figcaption>Fürdőszoba</figcaption></figure>
-      <figure data-cap="Gardrób és fürdő kapcsolata"><img src="images/gardrob-furdo.webp" alt="A gardrób és a fürdőszoba kapcsolata – bordázott üvegajtó" loading="lazy"><figcaption>Gardrób és fürdő</figcaption></figure>
-      <figure data-cap="Előszoba"><img src="images/eloszoba.webp" alt="Előszoba látványterve – halszálka parketta, arany keretes tükrök" loading="lazy"><figcaption>Előszoba</figcaption></figure>
-    </div>
-    <p class="gal-note">A bemutatott enteriőr az öt elérhető lakás egyikének látványterve. A látványtervek illusztrációk.</p>
   </div>
 </section>
 
@@ -977,10 +1005,46 @@ if(!reduce&&canvas.getContext){
   resize();
 }
 
-/* --- Érdekel gombok: űrlapra görgetés + lakás előválasztása --- */
+/* --- lakásválasztó fülek --- */
+var tabs=Array.prototype.slice.call(document.querySelectorAll('.ft'));
+function selectFlat(t,focus){
+  tabs.forEach(function(x){
+    var on=x===t;
+    x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
+    document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+  });
+  if(focus)t.focus();
+}
+tabs.forEach(function(t,i){
+  t.addEventListener('click',function(){selectFlat(t);});
+  t.addEventListener('keydown',function(e){
+    var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;
+    if(d){e.preventDefault();selectFlat(tabs[(i+d+tabs.length)%tabs.length],true);}
+  });
+});
+/* #lakas-3 típusú hivatkozás a megfelelő fület nyitja */
+function flatFromHash(){
+  var m=/^#lakas-(\d)$/.exec(location.hash),t=m&&document.getElementById('ft-'+m[1]);
+  if(t){selectFlat(t);document.getElementById('lakasok').scrollIntoView();}
+}
+window.addEventListener('hashchange',flatFromHash);flatFromHash();
+
+/* --- alaprajz / felülnézet váltó --- */
+document.querySelectorAll('.flat-panel').forEach(function(panel){
+  var btns=panel.querySelectorAll('.fv-btn');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b);});
+      panel.querySelectorAll('.fv').forEach(function(f){f.hidden=f.getAttribute('data-view')!==b.getAttribute('data-view');});
+    });
+  });
+});
+
+/* --- ajánlatkérő gombok: űrlapra görgetés + lakás előválasztása --- */
 var flatSelect=document.getElementById('f-flat');
-document.querySelectorAll('.btn-row').forEach(function(b){
-  b.addEventListener('click',function(){
+document.querySelectorAll('.fp-cta,.fp-soon-link').forEach(function(b){
+  b.addEventListener('click',function(e){
+    e.preventDefault();
     var v=b.getAttribute('data-flat');
     for(var i=0;i<flatSelect.options.length;i++){
       if(flatSelect.options[i].value===v){flatSelect.selectedIndex=i;break;}
@@ -1005,8 +1069,8 @@ document.querySelectorAll('.acc-btn').forEach(function(btn){
   });
 });
 
-/* --- lightbox --- */
-var figs=Array.prototype.slice.call(document.querySelectorAll('#gal figure'));
+/* --- lightbox: az aktuális lakás képei között lapoz --- */
+var figs=[];
 var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
 var cur=0,lastFocus=null;
 function show(i){
@@ -1017,12 +1081,16 @@ function show(i){
 }
 function openLb(i){lastFocus=document.activeElement;show(i);lb.classList.add('open');document.body.style.overflow='hidden';document.getElementById('lbClose').focus();}
 function closeLb(){lb.classList.remove('open');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
-figs.forEach(function(f,i){
+document.querySelectorAll('.lbx').forEach(function(f){
+  function go(){
+    figs=Array.prototype.slice.call(f.closest('.flat-panel').querySelectorAll('.lbx')).filter(function(x){return !x.hidden;});
+    openLb(figs.indexOf(f));
+  }
   f.setAttribute('tabindex','0');
   f.setAttribute('role','button');
   f.setAttribute('aria-label',f.getAttribute('data-cap')+' – kép nagyítása');
-  f.addEventListener('click',function(){openLb(i);});
-  f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(i);}});
+  f.addEventListener('click',go);
+  f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
 });
 document.getElementById('lbClose').addEventListener('click',closeLb);
 document.getElementById('lbPrev').addEventListener('click',function(){show(cur-1);});
