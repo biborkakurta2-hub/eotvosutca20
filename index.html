@@ -880,19 +880,12 @@ if(!reduce&&canvas.getContext){
     return null;
   }
   /* álló (telefonos) képernyőn: indulásnál az eredeti nézet (a kép a felső 72%-ot tölti ki),
-     görgetésre távolabbi nézetre vált: a kép szélességének ~56%-a látszik, a menüsortól a feliratig ér, a széleit vékony sáv olvasztja a háttérbe */
-  var PORTRAIT_VIS=.56,PORTRAIT_GAP=14,BG='29,26,21',FAR_FROM=.06,FAR_TO=.26;
+     görgetésre távolabbi nézetre vált: a kép szélességének ~56%-a látszik, közvetlenül a menüsor alatt kezdődik, az alja a háttérbe olvad */
+  var PORTRAIT_VIS=.56,BG='29,26,21',FAR_FROM=.06,FAR_TO=.26;
   var shadeFar=document.getElementById('buildShadeFar'),shadeNear=document.getElementById('buildShade'),far=0;
   function portrait(){return cw<ch;}
   var navEl=document.querySelector('nav');
   function navH(){return navEl?navEl.offsetHeight:0;}
-  /* a lépésfeliratok teteje: a kép idáig ér, alatta és fölötte csak egy vékony átmenet marad */
-  function textTop(){
-    var t=ch;
-    steps.forEach(function(st){var r=st.getBoundingClientRect();if(r.height)t=Math.min(t,r.top);});
-    var c=canvas.getBoundingClientRect().top;
-    return t-c-16;
-  }
   function drawCover(im,alpha){
     if(!im)return;
     var w,h,x,y,iw=im.naturalWidth,ih=im.naturalHeight;
@@ -900,7 +893,7 @@ if(!reduce&&canvas.getContext){
     var r=Math.max(cw/iw,bh/ih);
     w=iw*r;h=ih*r;x=(cw-w)*FOCUS_X;y=(bh-h)*FOCUS_Y;
     if(portrait()&&far>0){
-      var y2=navH()+PORTRAIT_GAP,h2=Math.max(cw/PORTRAIT_VIS*ih/iw,textTop()-y2),w2=h2*iw/ih,x2=(cw-w2)*.52;
+      var w2=cw/PORTRAIT_VIS,h2=w2*ih/iw,x2=(cw-w2)*.52,y2=navH();
       x+=(x2-x)*far;y+=(y2-y)*far;w+=(w2-w)*far;h+=(h2-h)*far;
     }
     ctx.globalAlpha=alpha;
@@ -910,10 +903,7 @@ if(!reduce&&canvas.getContext){
     ctx.globalAlpha=1;
   }
   function edgeFade(y,h){
-    var f=Math.min(h*.08,44),g;
-    g=ctx.createLinearGradient(0,y,0,y+f);
-    g.addColorStop(0,'rgba('+BG+',1)');g.addColorStop(1,'rgba('+BG+',0)');
-    ctx.fillStyle=g;ctx.fillRect(0,y-1,cw,f+1);
+    var f=h*.1,g;
     g=ctx.createLinearGradient(0,y+h-f,0,y+h);
     g.addColorStop(0,'rgba('+BG+',0)');g.addColorStop(1,'rgba('+BG+',1)');
     ctx.fillStyle=g;ctx.fillRect(0,y+h-f,cw,f+1);
