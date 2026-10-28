@@ -886,6 +886,17 @@ if(!reduce&&canvas.getContext){
   function portrait(){return cw<ch;}
   var navEl=document.querySelector('nav');
   function navH(){return navEl?navEl.offsetHeight:0;}
+  /* telefonon a lépésfeliratok közvetlenül a kép alá kerülnek, nem a képernyő aljára */
+  var stepsBox=document.querySelector('.build-steps');
+  function placeSteps(){
+    if(!portrait()){stepsBox.style.bottom='';steps.forEach(function(st){st.style.bottom='';});return;}
+    var imgBottom=navH()+cw/PORTRAIT_VIS*9/16;
+    var sh=0;steps.forEach(function(st){sh=Math.max(sh,st.offsetHeight);});
+    /* a feliratok teteje egy vonalba kerül, a rövidebbek sem csúsznak lejjebb */
+    steps.forEach(function(st){st.style.bottom=((sh-st.offsetHeight)*far)+'px';});
+    var want=Math.max(84,ch-imgBottom-24-sh);
+    stepsBox.style.bottom=(84+(want-84)*far)+'px';
+  }
   function drawCover(im,alpha){
     if(!im)return;
     var w,h,x,y,iw=im.naturalWidth,ih=im.naturalHeight;
@@ -925,6 +936,7 @@ if(!reduce&&canvas.getContext){
     far=portrait()?Math.min(1,Math.max(0,(p-FAR_FROM)/(FAR_TO-FAR_FROM))):0;
     far=far*far*(3-2*far);
     shadeFar.style.opacity=far;shadeNear.style.opacity=1-far;
+    placeSteps();
     /* melyik kép(ek) látszanak */
     var base=null,over=null,alpha=0,key='';
     for(var k=0;k<BUILD.length;k++){
