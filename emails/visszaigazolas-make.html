@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="hu" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light only">
+<title>Köszönjük érdeklődését – Eötvös utca 20.</title>
+<!--
+  Automatikus visszaigazoló e-mail az ajánlatkérő űrlaphoz.
+  Make.com-változat: a mezők a Webhook (1. modul) adataira hivatkoznak, beillesztéskor automatikusan behúzódnak.
+  Mezők:
+    {{1.nev}}  {{1.email}}  {{1.telefon}}  {{1.lakas}}  {{1.uzenet}}
+  A képek a weboldalról töltődnek: https://eotvosutca20.hu/images/email/
+-->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;padding:0;background:#ECE4D4}
+  a{color:#A9843E}
+  @media (max-width:620px){
+    .container{width:100%!important}
+    .px{padding-left:24px!important;padding-right:24px!important}
+    .h1{font-size:34px!important}
+    .stack td{display:block!important;width:100%!important}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#ECE4D4;">
+<!-- előnézeti szöveg a postafiókban -->
+<div style="display:none;max-height:0;overflow:hidden;font-size:1px;line-height:1px;color:#ECE4D4;">Megkaptuk ajánlatkérését – kollégánk a következő napokban telefonon felkeresi Önt.</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ECE4D4;">
+<tr><td align="center" style="padding:32px 12px;">
+
+  <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#F4EFE6;">
+
+    <!-- fejléc: logó -->
+    <tr><td align="center" style="background:#1D1A15;padding:34px 24px 26px;">
+      <img src="https://eotvosutca20.hu/images/email/lotusz.png" width="68" height="60" alt="" style="display:block;border:0;width:68px;height:60px;">
+      <div style="font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:30px;letter-spacing:10px;color:#EFE9DC;margin-top:14px;padding-left:10px;">EÖTVÖS</div>
+      <div style="font-family:'Jost',Helvetica,Arial,sans-serif;font-size:10.5px;letter-spacing:4px;text-transform:uppercase;color:#C6A868;margin-top:8px;">1067 Budapest · Eötvös utca 20.</div>
+    </td></tr>
+
+    <!-- köszönet -->
+    <tr><td class="px" style="padding:46px 56px 10px;">
+      <div style="font-family:'Jost',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#A9843E;font-weight:500;">Ajánlatkérés visszaigazolása</div>
+      <h1 class="h1" style="margin:14px 0 20px;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:500;font-size:40px;line-height:1.12;color:#26221E;">Kedves {{1.nev}}!</h1>
+      <p style="margin:0 0 16px;font-family:'Jost',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.7;color:#4A443B;font-weight:300;">Köszönjük, hogy érdeklődik az Eötvös utca 20. új otthonai iránt. Ajánlatkérését megkaptuk, és már dolgozunk rajta.</p>
+      <p style="margin:0;font-family:'Jost',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.7;color:#4A443B;font-weight:300;">Kollégánk <b style="font-weight:500;color:#26221E;">a következő napokban telefonon felkeresi Önt</b>, hogy részletesen bemutassa a lakást, válaszoljon kérdéseire, és egyeztessen egy személyes bejárást.</p>
+    </td></tr>
+
+    <!-- az érdeklődés adatai -->
+    <tr><td class="px" style="padding:34px 56px 6px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1px solid #C6A868;">
+        <tr><td style="padding:26px 28px 8px;">
+          <div style="font-family:'Jost',Helvetica,Arial,sans-serif;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#A9843E;font-weight:500;">A kiválasztott lakás</div>
+          <div style="font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:27px;line-height:1.25;color:#26221E;margin-top:8px;">{{1.lakas}}</div>
+        </td></tr>
+        <tr><td style="padding:12px 28px 24px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:'Jost',Helvetica,Arial,sans-serif;font-size:14.5px;line-height:1.5;color:#4A443B;">
+            <tr><td style="padding:10px 0;border-top:1px solid #ECE4D4;width:110px;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#6A6253;vertical-align:top;">Név</td><td style="padding:10px 0;border-top:1px solid #ECE4D4;">{{1.nev}}</td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #ECE4D4;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#6A6253;vertical-align:top;">E-mail</td><td style="padding:10px 0;border-top:1px solid #ECE4D4;">{{1.email}}</td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #ECE4D4;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#6A6253;vertical-align:top;">Telefon</td><td style="padding:10px 0;border-top:1px solid #ECE4D4;">{{1.telefon}}</td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #ECE4D4;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#6A6253;vertical-align:top;">Üzenet</td><td style="padding:10px 0;border-top:1px solid #ECE4D4;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:17px;">{{1.uzenet}}</td></tr>
+          </table>
+        </td></tr>
+      </table>
+      <p style="margin:12px 0 0;font-family:'Jost',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.6;color:#6A6253;font-weight:300;">Ha valamelyik adat pontatlan, egyszerűen válaszoljon erre a levélre.</p>
+    </td></tr>
+
+    <!-- hogyan tovább -->
+    <tr><td class="px" style="padding:36px 56px 8px;">
+      <div style="font-family:'Jost',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#A9843E;font-weight:500;">Hogyan tovább?</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px;font-family:'Jost',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#4A443B;font-weight:300;">
+        <tr>
+          <td width="44" valign="top" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;color:#A9843E;line-height:1;padding:2px 0 16px;">01</td>
+          <td valign="top" style="padding:0 0 16px;"><b style="font-weight:500;color:#26221E;">Telefonos egyeztetés.</b> A következő napokban telefonon felvesszük Önnel a kapcsolatot.</td>
+        </tr>
+        <tr>
+          <td width="44" valign="top" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;color:#A9843E;line-height:1;padding:2px 0 16px;">02</td>
+          <td valign="top" style="padding:0 0 16px;"><b style="font-weight:500;color:#26221E;">Részletes anyagok.</b> Elküldjük a lakás alaprajzát, a műszaki tartalmat és a személyre szabott ajánlatot.</td>
+        </tr>
+        <tr>
+          <td width="44" valign="top" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;color:#A9843E;line-height:1;padding:2px 0 6px;">03</td>
+          <td valign="top" style="padding:0 0 6px;"><b style="font-weight:500;color:#26221E;">Bejárás.</b> Egyeztetett időpontban szívesen megmutatjuk a házat és a környéket.</td>
+        </tr>
+      </table>
+    </td></tr>
+
+    <!-- gomb -->
+    <tr><td align="center" class="px" style="padding:30px 56px 46px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td style="background:#A9843E;">
+          <a href="https://eotvosutca20.hu/#lakasok" style="display:inline-block;padding:16px 34px;font-family:'Jost',Helvetica,Arial,sans-serif;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;color:#FFFFFF;text-decoration:none;font-weight:500;">A lakások megtekintése</a>
+        </td>
+      </tr></table>
+    </td></tr>
+
+    <!-- aláírás -->
+    <tr><td class="px" style="padding:0 56px 40px;">
+      <div style="border-top:1px solid #C6A868;padding-top:26px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:19px;color:#4A443B;">Üdvözlettel,</div>
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;color:#26221E;margin-top:4px;">Eötvös 20 Kft.</div>
+      <div style="font-family:'Jost',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#A9843E;margin-top:4px;">Értékesítés</div>
+    </td></tr>
+
+    <!-- lábléc -->
+    <tr><td class="px" align="center" style="background:#1D1A15;padding:32px 56px;">
+      <table role="presentation" class="stack" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:'Jost',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.7;color:#EFE9DC;">
+        <tr>
+          <td align="center" style="padding:4px 8px;"><span style="font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C6A868;">Telefon</span><br><a href="tel:+36302208333" style="color:#EFE9DC;text-decoration:none;">+36 30 220 8333</a></td>
+          <td align="center" style="padding:4px 8px;"><span style="font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C6A868;">E-mail</span><br><a href="mailto:info@eotvosutca20.hu" style="color:#EFE9DC;text-decoration:none;">info@eotvosutca20.hu</a></td>
+          <td align="center" style="padding:4px 8px;"><span style="font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#C6A868;">Web</span><br><a href="https://eotvosutca20.hu" style="color:#EFE9DC;text-decoration:none;">eotvosutca20.hu</a></td>
+        </tr>
+      </table>
+      <p style="margin:22px 0 0;font-family:'Jost',Helvetica,Arial,sans-serif;font-size:11px;line-height:1.6;color:rgba(239,233,220,.5);">Ezt az automatikus visszaigazolást azért kapta, mert ajánlatot kért az eotvosutca20.hu oldalon. A látványtervek tájékoztató jellegűek. Adatait kizárólag az ajánlatadás céljából kezeljük.</p>
+    </td></tr>
+
+  </table>
+
+</td></tr>
+</table>
+</body>
+</html>
