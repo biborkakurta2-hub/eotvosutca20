@@ -726,15 +726,10 @@ footer li{list-style:none;margin-bottom:8px}
         <div class="contactline"><b>Telefon</b><a href="tel:+36302208333">+36 30 220 8333</a></div>
       </div>
 
-      <!-- ŰRLAP BEKÖTÉSI PONT:
-           Az oldal statikus, ezért a beküldéshez külső szolgáltatás szükséges.
-           1) Formspree (ajánlott): regisztráljon a formspree.io oldalon, majd az alábbi
-              action értékében cserélje a FORM_ID-t a kapott azonosítóra.
-           2) Netlify Forms: Netlify hosztolás esetén adja hozzá a form taghez a
-              data-netlify="true" attribútumot, és törölje az action-t.
-           3) Saját backend: állítsa az action-t a saját endpointjára (method="POST").
-           4) Egyszerű fallback: action="mailto:ertekesites@pelda.hu" method="post" enctype="text/plain" -->
-      <form id="leadForm" action="https://formspree.io/f/FORM_ID" method="POST" novalidate class="reveal">
+      <!-- ŰRLAP BEKÖTÉSE: a beküldés a Make.com „eotvos-urlap” webhookjára megy.
+           A forgatókönyv küldi a visszaigazoló e-mailt (emails/visszaigazolas-make.html)
+           és az értesítést az értékesítésnek. Mezők: nev, email, telefon, lakas, uzenet, adatkezeles. -->
+      <form id="leadForm" action="https://hook.eu1.make.com/6jnsfi94toii53ech1lpfrnppqsmlqsi" method="POST" novalidate class="reveal">
         <div class="field">
           <label for="f-name">Teljes név *</label>
           <input type="text" id="f-name" name="nev" placeholder="Példa Anna" autocomplete="name" required>
@@ -1131,14 +1126,7 @@ form.addEventListener('submit',function(e){
     document.getElementById('formOk').classList.add('show');
   };
   var action=form.getAttribute('action')||'';
-  if(action.indexOf('FORM_ID')!==-1){
-    /* A beküldési endpoint még nincs bekötve (lásd a kommentet a form felett) —
-       demó módban csak a visszaigazolást jelenítjük meg. */
-    console.warn('Űrlap: a Formspree FORM_ID még nincs beállítva, a beküldés nem történt meg.');
-    done();
-    return;
-  }
-  fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+  fetch(action,{method:'POST',body:new FormData(form)})
     .then(function(){done();})
     .catch(function(){done();});
 });
