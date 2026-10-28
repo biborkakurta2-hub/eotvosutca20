@@ -116,8 +116,9 @@ nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .build-dots{display:none}
 }
 @media(max-aspect-ratio:1/1){
-  .build-canvas{background-size:161% auto;background-position:52% 40%}
-  .build-shade{background:linear-gradient(to top,rgba(29,26,21,1) 0%,rgba(29,26,21,.94) 30%,rgba(29,26,21,0) 44%)}
+  .build-canvas{background-size:auto 72%;background-position:53% 0}
+  .build-shade{background:linear-gradient(to top,rgba(29,26,21,1) 0%,rgba(29,26,21,.96) 34%,rgba(29,26,21,0) 58%,rgba(20,17,12,0) 85%,rgba(20,17,12,.35) 100%)}
+  .build-shade.far{background:linear-gradient(to top,rgba(29,26,21,1) 0%,rgba(29,26,21,.94) 30%,rgba(29,26,21,0) 44%)}
 }
 @media (prefers-reduced-motion:reduce){
   .hero{height:auto}
@@ -350,6 +351,7 @@ footer li{list-style:none;margin-bottom:8px}
   <div class="build-stage">
   <canvas class="build-canvas" id="buildCanvas" role="img" aria-label="Látványterv drónnézetből: a ház régi tetejét lebontják, és új emelet épül rá öt új lakással"></canvas>
   <div class="build-shade" id="buildShade"></div>
+  <div class="build-shade far" id="buildShadeFar" style="opacity:0"></div>
   <div class="wrap" id="heroCopy">
     <svg class="mark" width="56" height="50" viewBox="0 0 34 30" fill="none" aria-hidden="true">
       <path d="M17 2 C14 8 13 13 17 19 C21 13 20 8 17 2 Z" fill="#C6A868"/>
@@ -877,25 +879,26 @@ if(!reduce&&canvas.getContext){
     }
     return null;
   }
-  /* álló (telefonos) képernyőn távolabbi nézet: a kép szélességének ~62%-a látszik,
-     a sáv a szöveg fölött ül, a szélei a háttérszínbe olvadnak */
-  var PORTRAIT_VIS=.62,PORTRAIT_Y=.40,BG='29,26,21';
+  /* álló (telefonos) képernyőn: indulásnál az eredeti nézet (a kép a felső 72%-ot tölti ki),
+     görgetésre távolabbi nézetre vált: a kép szélességének ~62%-a látszik, a szélei a háttérbe olvadnak */
+  var PORTRAIT_VIS=.62,PORTRAIT_Y=.40,BG='29,26,21',FAR_FROM=.06,FAR_TO=.26;
+  var shadeFar=document.getElementById('buildShadeFar'),shadeNear=document.getElementById('buildShade'),far=0;
   function portrait(){return cw<ch;}
   function drawCover(im,alpha){
     if(!im)return;
-    var w,h,x,y;
-    if(portrait()){
-      w=cw/PORTRAIT_VIS;h=w*im.naturalHeight/im.naturalWidth;
-      x=(cw-w)*.52;y=ch*PORTRAIT_Y-h/2;
-    }else{
-      var r=Math.max(cw/im.naturalWidth,ch/im.naturalHeight);
-      w=im.naturalWidth*r;h=im.naturalHeight*r;
-      x=(cw-w)*FOCUS_X;y=(ch-h)*FOCUS_Y;
+    var w,h,x,y,iw=im.naturalWidth,ih=im.naturalHeight;
+    var bh=portrait()?ch*.72:ch;
+    var r=Math.max(cw/iw,bh/ih);
+    w=iw*r;h=ih*r;x=(cw-w)*FOCUS_X;y=(bh-h)*FOCUS_Y;
+    if(portrait()&&far>0){
+      var w2=cw/PORTRAIT_VIS,h2=w2*ih/iw,x2=(cw-w2)*.52,y2=ch*PORTRAIT_Y-h2/2;
+      x+=(x2-x)*far;y+=(y2-y)*far;w+=(w2-w)*far;h+=(h2-h)*far;
     }
     ctx.globalAlpha=alpha;
     ctx.drawImage(im,x,y,w,h);
+    ctx.globalAlpha=far;
+    if(portrait()&&far>0&&alpha>=1)edgeFade(y,h);
     ctx.globalAlpha=1;
-    if(portrait()&&alpha>=1)edgeFade(y,h);
   }
   function edgeFade(y,h){
     var f=h*.1,g;
@@ -920,6 +923,9 @@ if(!reduce&&canvas.getContext){
   }
   function render(){
     var p=progress();
+    far=portrait()?Math.min(1,Math.max(0,(p-FAR_FROM)/(FAR_TO-FAR_FROM))):0;
+    far=far*far*(3-2*far);
+    shadeFar.style.opacity=far;shadeNear.style.opacity=1-far;
     /* melyik kép(ek) látszanak */
     var base=null,over=null,alpha=0,key='';
     for(var k=0;k<BUILD.length;k++){
@@ -931,6 +937,7 @@ if(!reduce&&canvas.getContext){
         alpha=Math.min(1,(p-s.from)/(s.to-s.from));over=s.img;key+='f'+k+'-'+alpha.toFixed(3);
       }
     }
+    key+='@'+far.toFixed(3);
     if(key!==lastKey&&cw){
       lastKey=key;
       ctx.clearRect(0,0,cw,ch);
