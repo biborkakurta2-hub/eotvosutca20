@@ -43,3 +43,9 @@ Képek helye: `images/lakasok/`
 - további enteriőrök tetszőleges néven, pl. `l2-nappali.webp`
 
 Új lakás képeinek felvételekor az 1. lakás blokkját (`<article id="lakas-1">`) érdemes mintának venni.
+
+## Visszaigazoló e-mail
+
+`emails/visszaigazolas.html` – az ajánlatkérés után a látogatónak küldendő automatikus válaszlevél a weboldal stílusában.
+A `{{nev}}`, `{{email}}`, `{{telefon}}`, `{{lakas}}`, `{{uzenet}}` mezőket a küldő rendszer (pl. Make.com) cseréli ki az űrlap adataira.
+A képek a `images/email/` mappából, a weboldal címéről töltődnek, ezért a levél csak az élesítés után jelenik meg hiánytalanul.
