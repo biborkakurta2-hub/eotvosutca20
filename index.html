@@ -84,9 +84,9 @@ nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 }
 
 /* ---------- hero: görgetésre épülő ház ---------- */
-.hero{position:relative;height:250vh;padding:0;color:#fff;background:var(--dark)}
+.hero{position:relative;height:300vh;padding:0;color:#fff;background:var(--dark)}
 .build-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;align-items:flex-end;isolation:isolate}
-.build-canvas{position:absolute;inset:0;z-index:-2;width:100%;height:100%;display:block;background:#1d1a15 url("images/epites/a_001.webp") 53% 50%/cover no-repeat}
+.build-canvas{position:absolute;inset:0;z-index:-2;width:100%;height:100%;display:block;background:#1d1a15 url("images/epites/a_001.webp") 50% 50%/cover no-repeat}
 .build-shade{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(to right,rgba(20,17,12,.45) 0%,rgba(20,17,12,0) 55%),linear-gradient(to top,rgba(20,17,12,.82) 0%,rgba(20,17,12,.30) 42%,rgba(20,17,12,.10) 70%,rgba(20,17,12,.35) 100%);transition:opacity .4s}
 .hero .wrap{padding:0 0 90px;transition:opacity .25s linear,transform .25s linear;will-change:opacity,transform}
 .build-steps,.build-bar{position:absolute;left:0;right:0;width:min(1160px,92%);margin:0 auto}
@@ -122,7 +122,7 @@ nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media (prefers-reduced-motion:reduce){
   .hero{height:auto}
   .build-stage{position:relative;min-height:100svh}
-  .build-canvas{background-image:url("images/epites/b_064.webp")}
+  .build-canvas{background-image:url("images/epites/c_040.webp")}
   .build-steps,.build-bar,.build-dots{display:none}
 }
 .hero .addr{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-line);font-weight:500;margin-bottom:26px}
@@ -372,15 +372,15 @@ footer li{list-style:none;margin-bottom:8px}
     <li><b>03</b> Kész</li>
   </ol>
   <div class="build-steps" aria-live="polite">
-    <div class="build-step" data-from=".08" data-to=".48">
+    <div class="build-step" data-from=".08" data-to=".38">
       <span class="no">01 · Ma</span>
       <h2>A klasszikus bérház</h2>
       <p>1877 óta áll Terézváros szívében. A régi tető helyére új élet költözik.</p>
     </div>
-    <div class="build-step" data-from=".48" data-to=".86">
+    <div class="build-step" data-from=".38" data-to=".86">
       <span class="no">02 · Ráépítés</span>
       <h2>Egy új emelet</h2>
-      <p>A meglévő falakra épül, a ház karakterét megőrizve.</p>
+      <p>Az udvari szárnyra, a meglévő falakra épül. Az utcai homlokzat érintetlen marad.</p>
     </div>
     <div class="build-step" data-from=".86" data-to="1.01">
       <span class="no">03 · Kész</span>
@@ -826,12 +826,14 @@ else{
 
 /* --- hero: görgetésre épülő ház (képkocka-szekvencia canvasra rajzolva) ---
    A szakaszok a hero görgetési hosszának arányában (0–1) futnak.
-   'seq' = képkockasor (a_ = a régi tető bontása, b_ = az új emelet felépülése),
+   'seq' = képkockasor (a_ = felemelkedés az utcáról, b_ = a régi tető bontása, c_ = az új emelet felépülése),
    'fade' = átúszás egy állóképbe. */
 var BUILD=[
-  {type:'seq',src:function(i){return 'images/epites/a_'+('00'+(i+1)).slice(-3)+'.webp';},count:64,from:.06,to:.46},
-  {type:'seq',src:function(i){return 'images/epites/b_'+('00'+(i+1)).slice(-3)+'.webp';},count:64,from:.50,to:.92}
+  {type:'seq',src:frames('a'),count:40,from:.04,to:.34},
+  {type:'seq',src:frames('b'),count:40,from:.40,to:.62},
+  {type:'seq',src:frames('c'),count:40,from:.66,to:.92}
 ];
+function frames(p){return function(i){return 'images/epites/'+p+'_'+('00'+(i+1)).slice(-3)+'.webp';};}
 var hero=document.getElementById('hero');
 var canvas=document.getElementById('buildCanvas');
 if(!reduce&&canvas.getContext){
@@ -840,7 +842,7 @@ if(!reduce&&canvas.getContext){
   var fill=document.getElementById('buildFill');
   var steps=Array.prototype.slice.call(document.querySelectorAll('.build-step'));
   var dotList=document.getElementById('buildDots'),dots=dotList.querySelectorAll('li');
-  var FOCUS_X=.53,FOCUS_Y=.5;
+  var FOCUS_X=.5,FOCUS_Y=.5;
   var cw=0,ch=0,lastKey='';
 
   BUILD.forEach(function(s){
