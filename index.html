@@ -122,7 +122,7 @@ nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media (prefers-reduced-motion:reduce){
   .hero{height:auto}
   .build-stage{position:relative;min-height:100svh}
-  .build-canvas{background-image:url("images/epites/c_040.webp")}
+  .build-canvas{background-image:url("images/epites/c_061.webp")}
   .build-steps,.build-bar,.build-dots{display:none}
 }
 .hero .addr{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-line);font-weight:500;margin-bottom:26px}
@@ -829,9 +829,9 @@ else{
    'seq' = képkockasor (a_ = felemelkedés az utcáról, b_ = a régi tető bontása, c_ = az új emelet felépülése),
    'fade' = átúszás egy állóképbe. */
 var BUILD=[
-  {type:'seq',src:frames('a'),count:40,from:.04,to:.34},
-  {type:'seq',src:frames('b'),count:40,from:.40,to:.62},
-  {type:'seq',src:frames('c'),count:40,from:.66,to:.92}
+  {type:'seq',src:frames('a'),count:48,from:.04,to:.32},
+  {type:'seq',src:frames('b'),count:61,from:.40,to:.62},
+  {type:'seq',src:frames('c'),count:61,from:.66,to:.92}
 ];
 function frames(p){return function(i){return 'images/epites/'+p+'_'+('00'+(i+1)).slice(-3)+'.webp';};}
 var hero=document.getElementById('hero');

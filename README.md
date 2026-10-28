@@ -28,5 +28,5 @@ Az `images` mappában töltsd fel az új képet **ugyanazzal a fájlnévvel** (A
 ## Görgetéses fejléc (a ház felépül)
 
 - A fejlécben a ház görgetésre „felépül”: előbb lebomlik a régi tető, majd ráépül az új emelet.
-- A képkockák az `images/epites` mappában vannak: `a_` (felemelkedés az utcáról), `b_` (tetőbontás), `c_` (ráépítés), mindegyikből 40.
+- A képkockák az `images/epites` mappában vannak: `a_` (felemelkedés az utcáról), `b_` (tetőbontás), `c_` (ráépítés), `a_` 48, `b_` és `c_` 61 kocka (a két utóbbi Higgsfield-videóból).
 - A görgetés hosszát az `index.html`-ben a `.hero{...height:300vh}` érték adja: kisebb szám = gyorsabban felépül.
