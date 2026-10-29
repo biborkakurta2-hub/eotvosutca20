@@ -229,13 +229,14 @@ nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .lb .lb-next{right:18px;top:50%;transform:translateY(-50%)}
 
 /* ---------- műszaki ---------- */
-.spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--gold-line);margin-top:14px}
-.spec{display:grid;grid-template-columns:190px 1fr;gap:20px;padding:22px 6px;border-bottom:1px solid var(--gold-line)}
-.spec dt{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500;padding-top:4px}
-.spec dd{color:var(--ink-soft);font-size:16px}
-.spec-grid .spec:nth-child(odd){margin-right:34px}
-.spec-grid .spec:nth-child(even){margin-left:34px}
-@media(max-width:860px){.spec-grid{grid-template-columns:1fr}.spec-grid .spec{margin:0!important}.spec{grid-template-columns:1fr;gap:6px;padding:20px 0}}
+#finanszirozas{background:var(--paper)}
+.fin-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.fin-cta{margin-top:30px;border:none}
+.fin-facts{display:grid;gap:0;border-top:1px solid var(--gold-line)}
+.fin-facts div{display:flex;align-items:baseline;gap:24px;padding:22px 0;border-bottom:1px solid var(--gold-line)}
+.fin-facts dt{font-family:var(--serif);font-size:clamp(40px,4.4vw,56px);line-height:1;color:var(--gold);min-width:170px;font-weight:500}
+.fin-facts dd{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+@media(max-width:900px){.fin-grid{grid-template-columns:1fr;gap:40px}.fin-facts dt{min-width:130px}}
 
 /* ---------- lokáció ---------- */
 #lokacio{background:var(--paper-2)}
@@ -350,7 +351,7 @@ footer li{list-style:none;margin-bottom:8px}
     <ul class="navlinks" id="navlinks">
       <li><a href="#projekt">A projekt</a></li>
       <li><a href="#lakasok">Lakások</a></li>
-      <li><a href="#muszaki">Műszaki tartalom</a></li>
+      <li><a href="#finanszirozas">Finanszírozás</a></li>
       <li><a href="#lokacio">Lokáció</a></li>
       <li><a href="#gyik">GYIK</a></li>
       <li><a href="#ajanlat" class="nav-cta">Ajánlatot kérek</a></li>
@@ -586,18 +587,23 @@ footer li{list-style:none;margin-bottom:8px}
   <button class="lb-next" id="lbNext" aria-label="Következő kép">›</button>
 </div>
 
-<!-- ============ MŰSZAKI ============ -->
-<section id="muszaki">
+<!-- ============ FINANSZÍROZÁS ============ -->
+<section id="finanszirozas">
   <div class="wrap">
-    <p class="eyebrow reveal">Műszaki tartalom</p>
-    <h2 class="reveal">Beilleszthető igényes részletek</h2>
-    <dl class="spec-grid reveal">
-      <div class="spec"><dt>Fürdőszobák</dt><dd>Márványburkolat, fekete szerelvények; zuhanyzó természetes fénnyel.</dd></div>
-      <div class="spec"><dt>Konyha</dt><dd>Letisztult vonalak, sötét frontok, kőmintás munkapult.</dd></div>
-      <div class="spec"><dt>Tárolás</dt><dd>Üvegfrontos, világított beépített szekrények és gardrób.</dd></div>
-      <div class="spec"><dt>Burkolatok</dt><dd>Halszálka mintás parketta a lakóterekben, nagyméretű kőlapok a vizes helyiségekben.</dd></div>
-    </dl>
-    <p class="tnote caption reveal">Az enteriőrökben bemutatott megoldások vevői igény szerint beilleszthetők; a részletes műszaki tartalomról ajánlatkéréskor adunk tájékoztatást.</p>
+    <div class="fin-grid">
+      <div class="reveal">
+        <p class="eyebrow">Finanszírozás</p>
+        <h2>Wekerle Plusz lakáshitellel is megvásárolható</h2>
+        <p class="lead">Új építésű lakásként a lakásokhoz a 2026 októberében indult Wekerle Plusz kedvezményes, fix kamatozású lakáshitel is igényelhető — a jogosultsági feltételek teljesülése esetén.</p>
+        <a href="#ajanlat" class="btn btn-solid fin-cta">Érdeklődöm a finanszírozásról</a>
+      </div>
+      <dl class="fin-facts reveal">
+        <div><dt>3%</dt><dd>fix kamat új lakásra</dd></div>
+        <div><dt>50 M Ft</dt><dd>maximális hitelösszeg</dd></div>
+        <div><dt>25 év</dt><dd>maximális futamidő</dd></div>
+      </dl>
+    </div>
+    <p class="tnote caption reveal">A program részletes feltételeit (pl. életkor, önerő, hitelbírálat) a bankok és a hatályos kormányrendelet határozzák meg. Kérésre hitelközvetítő partnerünkkel is összekötjük.</p>
   </div>
 </section>
 
@@ -689,7 +695,7 @@ footer li{list-style:none;margin-bottom:8px}
       </div>
       <div class="acc-item">
         <button class="acc-btn" aria-expanded="false" aria-controls="p3" id="q3">Igénybe vehető hitel vagy állami támogatás?<span class="ic">+</span></button>
-        <div class="acc-panel" id="p3" role="region" aria-labelledby="q3"><div class="inner">Az új építésű lakások banki finanszírozással megvásárolhatók, és a mindenkori jogosultsági feltételek teljesülése esetén állami támogatások is igénybe vehetők. Javasoljuk, hogy a konkrét lehetőségekről egyeztessen hitelközvetítőjével vagy bankjával — kérésre partnereinkkel is összekötjük.</div></div>
+        <div class="acc-panel" id="p3" role="region" aria-labelledby="q3"><div class="inner">Igen. Az új építésű lakásokhoz a jogosultsági feltételek teljesülése esetén a Wekerle Plusz kedvezményes, fix kamatozású lakáshitel (új lakásra 3%, legfeljebb 50 millió Ft, legfeljebb 25 év futamidő) is igénybe vehető, emellett hagyományos banki finanszírozással is megvásárolhatók. Javasoljuk, hogy a konkrét lehetőségekről egyeztessen hitelközvetítőjével vagy bankjával — kérésre partnereinkkel is összekötjük.</div></div>
       </div>
       <div class="acc-item">
         <button class="acc-btn" aria-expanded="false" aria-controls="p4" id="q4">Milyen garancia vonatkozik a lakásokra?<span class="ic">+</span></button>
