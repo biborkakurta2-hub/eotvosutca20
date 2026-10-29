@@ -169,6 +169,34 @@ nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .status.sold{color:#9A3B3B}.status.sold::before{background:#9A3B3B}
 .price{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:17px}
 .tnote{margin-top:22px;font-size:14px}
+/* szintenkénti áttekintő */
+.levels{margin-top:46px}
+.levels-head{display:grid;grid-template-columns:auto 1fr;gap:10px 40px;align-items:end}
+.levels-head h3{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3vw,34px);margin:0}
+.levels-head p{color:var(--ink-soft);font-size:15.5px;max-width:620px;margin:0}
+.levels-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.lvl-card{margin:0;background:var(--paper);padding:18px 18px 12px;box-shadow:0 18px 44px rgba(38,34,25,.08)}
+.lvl-card figcaption span{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.lvl-card svg{display:block;width:100%;height:auto;margin-top:10px}
+.zone polygon{fill:rgba(169,132,62,.16);stroke:#A9843E;stroke-width:5;stroke-linejoin:round;transition:fill .25s}
+.zone.z1 polygon{fill:rgba(120,82,48,.22)}
+.zone.z2 polygon{fill:rgba(126,150,120,.26);stroke:#6F8A69}
+.zone.z3 polygon{fill:rgba(31,96,74,.24);stroke:#1F604A;stroke-dasharray:18 10}
+.zone.z4 polygon{fill:rgba(183,110,74,.22);stroke:#A4613F}
+.zone.z5 polygon{fill:rgba(90,96,110,.20);stroke:#5A606E}
+.zone{cursor:pointer;outline:none}
+.zone:hover polygon,.zone:focus polygon,.zone.on polygon{fill-opacity:1;fill:rgba(169,132,62,.38)}
+.zone .zl{font-family:'Cormorant Garamond',Georgia,serif;font-size:100px;font-weight:500;fill:#26221E;text-anchor:middle;paint-order:stroke;stroke:rgba(250,247,240,.85);stroke-width:10px}
+.zone .zs{font-family:'Jost',Helvetica,Arial,sans-serif;font-size:42px;letter-spacing:3px;fill:#4A443B;text-anchor:middle;text-transform:uppercase;paint-order:stroke;stroke:rgba(250,247,240,.85);stroke-width:8px}
+.zx{font-family:'Jost',Helvetica,Arial,sans-serif;font-size:30px;letter-spacing:5px;fill:#9A9080;text-anchor:middle;text-transform:uppercase}
+.levels-key{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;margin:16px 0 0;padding:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.levels-key li{display:flex;align-items:center;gap:8px}
+.levels-key li::before{content:"";width:14px;height:14px;border:2px solid #A9843E;background:rgba(120,82,48,.22)}
+.levels-key .k2::before{border-color:#6F8A69;background:rgba(126,150,120,.26)}
+.levels-key .k3::before{border:2px dashed #1F604A;background:rgba(31,96,74,.24)}
+.levels-key .k4::before{border-color:#A4613F;background:rgba(183,110,74,.22)}
+.levels-key .k5::before{border-color:#5A606E;background:rgba(90,96,110,.20)}
+@media(max-width:900px){.levels-grid{grid-template-columns:1fr}.levels-head{grid-template-columns:1fr}}
 /* lakásválasztó fülek */
 .flat-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:44px}
 .ft{background:transparent;border:1px solid var(--gold-line);padding:16px 18px;text-align:left;cursor:pointer;font-family:var(--sans);color:var(--ink);transition:background .25s,border-color .25s,color .25s}
@@ -462,6 +490,61 @@ footer li{list-style:none;margin-bottom:8px}
     <p class="eyebrow reveal">A lakások</p>
     <h2 class="reveal">Öt otthon, két szinten</h2>
     <p class="lead reveal">A második emeleten három, a tetőtéri szinten két lakás készül. Válassza ki a lakást: megnézheti az alaprajzát, a látványterveit, és egy kattintással ajánlatot kérhet rá.</p>
+
+
+    <div class="levels reveal">
+      <div class="levels-head">
+        <h3>Hol helyezkednek el a lakások?</h3>
+        <p>Kattintson egy lakásra az alaprajzon, és megnyílik az adatlapja. A 3. lakás kétszintes: belső lépcsővel köti össze a második emeletet és a tetőteret.</p>
+      </div>
+      <div class="levels-grid">
+      <figure class="lvl-card">
+        <figcaption><span>2. emelet</span></figcaption>
+        <svg viewBox="0 0 1900 1440" role="img" aria-label="A második emelet: 1., 2. lakás és a 3. lakás alsó szintje">
+        <image href="images/lakasok/szint-2emelet.webp" width="1900" height="1440"/>
+        <a class="zone z1" href="#lakas-1" data-flat="1" aria-label="1. lakás – 65,71 m²">
+          <polygon points="45,55 1070,45 1070,525 50,530 50,410 190,410 190,235 45,235"/>
+          <text x="558" y="282" class="zl">L1</text>
+          <text x="558" y="328" class="zs">65,71 m²</text>
+        </a>
+        <a class="zone z2" href="#lakas-2" data-flat="2" aria-label="2. lakás – 54,34 m²">
+          <polygon points="1070,45 1380,45 1380,225 1700,225 1700,40 1815,40 1815,740 1465,740 1465,525 1070,525"/>
+          <text x="1620" y="494" class="zl">L2</text>
+          <text x="1620" y="540" class="zs">54,34 m²</text>
+        </a>
+        <a class="zone z3" href="#lakas-3" data-flat="3" aria-label="3. lakás – alsó szint">
+          <polygon points="1415,755 1815,755 1815,1385 1415,1385"/>
+          <text x="1615" y="1064" class="zl">L3</text>
+          <text x="1615" y="1110" class="zs">alsó szint</text>
+        </a>
+        <text x="1000" y="1240" class="zx">Belső udvar · védett fa</text>
+        </svg>
+      </figure>
+      <figure class="lvl-card">
+        <figcaption><span>Tetőtér</span></figcaption>
+        <svg viewBox="0 0 1900 1440" role="img" aria-label="A tetőtéri szint: 4., 5. lakás és a 3. lakás felső szintje">
+        <image href="images/lakasok/szint-tetoter.webp" width="1900" height="1440"/>
+        <a class="zone z4" href="#lakas-4" data-flat="4" aria-label="4. lakás – 52,97 m²">
+          <polygon points="235,165 750,165 750,60 1100,55 1100,535 80,535 80,455 235,405"/>
+          <text x="620" y="344" class="zl">L4</text>
+          <text x="620" y="390" class="zs">52,97 m²</text>
+        </a>
+        <a class="zone z5" href="#lakas-5" data-flat="5" aria-label="5. lakás – 51,16 m²">
+          <polygon points="1100,55 1395,55 1395,235 1830,235 1830,750 1465,750 1465,530 1100,530"/>
+          <text x="1630" y="494" class="zl">L5</text>
+          <text x="1630" y="540" class="zs">51,16 m²</text>
+        </a>
+        <a class="zone z3" href="#lakas-3" data-flat="3" aria-label="3. lakás – felső szint">
+          <polygon points="1430,770 1830,770 1830,1390 1430,1390"/>
+          <text x="1630" y="1074" class="zl">L3</text>
+          <text x="1630" y="1120" class="zs">felső szint</text>
+        </a>
+        <text x="1000" y="1240" class="zx">Belső udvar · védett fa</text>
+        </svg>
+      </figure>
+      </div>
+      <ul class="levels-key" aria-hidden="true"><li class="k1">1. lakás</li><li class="k2">2. lakás</li><li class="k3">3. lakás · kétszintes</li><li class="k4">4. lakás</li><li class="k5">5. lakás</li></ul>
+    </div>
 
     <div class="flat-tabs reveal" role="tablist" aria-label="Lakások">
         <button class="ft" role="tab" id="ft-1" aria-controls="lakas-1" aria-selected="true"><b>1. lakás</b><span>65,71 m² · 2. emelet</span></button>
@@ -1038,6 +1121,7 @@ function selectFlat(t,focus){
     var on=x===t;
     x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
     document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+    document.querySelectorAll('.zone.z'+x.id.slice(3)).forEach(function(z){z.classList.toggle('on',on);});
   });
   if(focus)t.focus();
 }
@@ -1053,7 +1137,16 @@ function flatFromHash(){
   var m=/^#lakas-(\d)$/.exec(location.hash),t=m&&document.getElementById('ft-'+m[1]);
   if(t){selectFlat(t);document.getElementById('lakasok').scrollIntoView();}
 }
+selectFlat(tabs[0]);
 window.addEventListener('hashchange',flatFromHash);flatFromHash();
+/* az áttekintő rajzon a lakásra kattintva megnyílik az adatlapja */
+document.querySelectorAll('.zone').forEach(function(z){
+  z.addEventListener('click',function(e){
+    e.preventDefault();
+    selectFlat(document.getElementById('ft-'+z.getAttribute('data-flat')));
+    document.querySelector('.flat-tabs').scrollIntoView({behavior:reduce?'auto':'smooth'});
+  });
+});
 
 /* --- alaprajz / felülnézet váltó --- */
 document.querySelectorAll('.flat-panel').forEach(function(panel){
