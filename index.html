@@ -203,6 +203,8 @@ nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .fp-gal figure{position:relative;overflow:hidden;cursor:zoom-in;aspect-ratio:16/9;background:#111}
 .fp-gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .fp-gal figure:hover img{transform:scale(1.04)}
+/* páratlan számú képnél az első kép teljes szélességű, így nem marad lyuk */
+.fp-gal figure:first-child:nth-last-child(odd){grid-column:1/-1}
 .fp-gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 13px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#fff;background:linear-gradient(to top,rgba(15,13,10,.72),transparent)}
 .fp-soon{margin-top:40px;border:1px dashed var(--gold-line);padding:34px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
 .fp-soon span{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink-soft)}
@@ -510,11 +512,20 @@ footer li{list-style:none;margin-bottom:8px}
             <button class="btn btn-solid fp-cta" data-flat="2. lakás — 2. emelet, 54,34 m²">Ajánlatot kérek erre a lakásra</button>
           </div>
         </header>
-        <div class="fp-plan fp-plan-only">
-          <figure class="fv lbx" data-view="plan" data-cap="2. lakás – alaprajz"><img src="images/lakasok/l2-alaprajz.webp" alt="A 2. lakás alaprajza helyiségenkénti alapterülettel" loading="lazy"></figure>
+        <div class="fp-views" role="group" aria-label="Nézet"><button class="fv-btn" aria-pressed="true" data-view="top">Berendezett felülnézet</button><button class="fv-btn" aria-pressed="false" data-view="plan">Alaprajz m²-rel</button></div>
+        <div class="fp-plan">
+          <figure class="fv lbx" data-view="top" data-cap="2. lakás – berendezett felülnézet"><img src="images/lakasok/l2-felulnezet.webp" alt="A 2. lakás berendezett felülnézeti látványterve" loading="lazy"></figure>
+          <figure class="fv lbx" data-view="plan" data-cap="2. lakás – alaprajz" hidden><img src="images/lakasok/l2-alaprajz.webp" alt="A 2. lakás alaprajza helyiségenkénti alapterülettel" loading="lazy"></figure>
         </div>
-        <p class="fp-note fp-note-plan"><b>Alaprajz a tervek alapján.</b> Az alaprajz a jóváhagyott tervrajz szerinti elrendezést mutatja; a helyiségenkénti területek számított, tájékoztató értékek, a lakás hivatalos hasznos alapterülete 54,34 m².</p>
-        <div class="fp-soon"><span>Enteriőr látványtervek hamarosan</span><a href="#ajanlat" class="fp-soon-link" data-flat="2. lakás — 2. emelet, 54,34 m²">Kérje el elsőként</a></div>
+        <p class="fp-note fp-note-plan"><b>Alaprajz a tervek alapján.</b> Az alaprajz és a felülnézet a jóváhagyott tervrajz szerinti elrendezést mutatja; a helyiségenkénti területek számított, tájékoztató értékek, a lakás hivatalos hasznos alapterülete 54,34 m².</p>
+        <div class="fp-gal">
+          <figure class="lbx" data-cap="Nappali"><img src="images/lakasok/l2-nappali.webp" alt="Nappali – zsályazöld bársonykanapé, travertin dohányzóasztal, klasszikus falkeretek, magas ablak" loading="lazy"><figcaption>Nappali</figcaption></figure>
+          <figure class="lbx" data-cap="Konyha és étkező"><img src="images/lakasok/l2-konyha-etkezo.webp" alt="Konyha és étkező – zsályazöld és világos tölgy konyhabútor travertin pulttal, kerek étkezőasztal" loading="lazy"><figcaption>Konyha és étkező</figcaption></figure>
+          <figure class="lbx" data-cap="Hálószoba"><img src="images/lakasok/l2-haloszoba.webp" alt="Hálószoba – kárpitozott franciaágy, zsályazöld ágynemű, kilátás a gardróbra" loading="lazy"><figcaption>Hálószoba</figcaption></figure>
+          <figure class="lbx" data-cap="Fürdőszoba"><img src="images/lakasok/l2-furdoszoba.webp" alt="Fürdőszoba – travertin burkolatú kád, kerek kőmosdó tölgy pultszekrényen, sárgaréz szerelvények" loading="lazy"><figcaption>Fürdőszoba</figcaption></figure>
+          <figure class="lbx" data-cap="Gardrób"><img src="images/lakasok/l2-gardrob.webp" alt="Gardrób – világos tölgy szekrényfalak, bordázott üvegajtók, rejtett világítás" loading="lazy"><figcaption>Gardrób</figcaption></figure>
+        </div>
+        <p class="fp-note"><b>Tájékoztató jellegű látványképek.</b> A belső képek illusztrációk: a berendezés, a bútorok, a világítás és az anyaghasználat a hangulatot mutatják, nem képezik az eladás tárgyát.</p>
       </article>
       <article class="flat-panel" id="lakas-3" role="tabpanel" aria-labelledby="ft-3" hidden>
         <header class="fp-head">
