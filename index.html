@@ -1058,6 +1058,12 @@ if(!reduce&&canvas.getContext){
     var bh=portrait()?ch*.72:ch;
     var r=Math.max(cw/iw,bh/ih);
     w=iw*r;h=ih*r;x=(cw-w)*FOCUS_X;y=(bh-h)*FOCUS_Y;
+    if(!portrait()){
+      /* fekvő (asztali) képernyőn a kép teteje közvetlenül a menüsor alatt kezdődik,
+         így a ráépítés (a hátsó udvari szárny) nem csúszik a menü alá; csak a kép alja vágódik */
+      var top=navH(),avail=ch-top;
+      r=Math.max(cw/iw,avail/ih);w=iw*r;h=ih*r;x=(cw-w)*FOCUS_X;y=top;
+    }
     if(portrait()&&far>0){
       var w2=cw/PORTRAIT_VIS,h2=w2*ih/iw,x2=(cw-w2)*.52,y2=navH();
       x+=(x2-x)*far;y+=(y2-y)*far;w+=(w2-w)*far;h+=(h2-h)*far;
