@@ -1062,7 +1062,7 @@ if(!reduce&&canvas.getContext){
       /* fekvő (asztali) képernyőn a kép teteje közvetlenül a menüsor alatt kezdődik,
          így a ráépítés (a hátsó udvari szárny) nem csúszik a menü alá; csak a kép alja vágódik */
       var top=navH(),avail=ch-top;
-      r=Math.max(cw/iw,avail/ih);w=iw*r;h=ih*r;x=(cw-w)*FOCUS_X;y=top;
+      r=Math.max(cw/iw,avail/ih);w=iw*r;h=ih*r;x=(cw-w)*FOCUS_X;y=top-h*.07;
     }
     if(portrait()&&far>0){
       var w2=cw/PORTRAIT_VIS,h2=w2*ih/iw,x2=(cw-w2)*.52,y2=navH();
